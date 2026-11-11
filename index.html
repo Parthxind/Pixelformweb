@@ -1,0 +1,2272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixelform | Graphics & Package Design Studio — Your thought, Our design.</title>
+  <meta name="description" content="Pixelform is a premier graphics and package design studio in SGSITS, Indore. Brand identity, print-ready packaging, 3D mockups, and social creatives. Your thought, Our design." />
+
+  <!-- Pixelform Aperture Icon Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3CclipPath id='c'%3E%3Ccircle cx='100' cy='100' r='94'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23c)'%3E%3Cpath d='M6 100A94 94 0 0 1 194 100Z' fill='%23181818'/%3E%3Cpath d='M6 100A94 94 0 0 0 194 100Z' fill='%23dcdcdc'/%3E%3Cpath d='M68 100A32 32 0 0 1 132 100Z' fill='%23ffffff'/%3E%3Cpath d='M86 100A14 14 0 0 1 114 100Z' fill='%23181818'/%3E%3Cpath d='M68 100A32 32 0 0 0 132 100Z' fill='%23181818'/%3E%3Cpath d='M86 100A14 14 0 0 0 114 100Z' fill='%23ffffff'/%3E%3C/g%3E%3C/svg%3E" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Luxury Geometric Typography System: Syncopate (Headings) + Space Grotesk (Specs/Labels) + Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#020c1f',
+            offwhite: '#f1f0ef',
+            purewhite: '#ffffff',
+            electric: '#05e1fd',
+            deepteal: '#00496e',
+            iceblue: '#5ebebe',
+            crimson: '#ff2453'
+          },
+          fontFamily: {
+            syncopate: ['Syncopate', 'sans-serif'],
+            space: ['Space Grotesk', 'sans-serif'],
+            jakarta: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* ==========================================================================
+       1. BRAND COLOR SYSTEM (WITH NEON CRIMSON RED & THEME SURFACES)
+       ========================================================================== */
+    :root,
+    [data-theme="dark"] {
+      --obsidian: #020c1f;
+      --off-white: #f1f0ef;
+      --pure-white: #ffffff;
+      --electric-cyan: #05e1fd;
+      --deep-teal: #00496e;
+      --ice-blue: #5ebebe;
+      --crimson-red: #ff2453;
+      --crimson-glow: 0 0 28px rgba(255, 36, 83, 0.42);
+
+      /* Gradient Shifts */
+      --shift-teal-cyan: linear-gradient(135deg, #00496e 0%, #05e1fd 100%);
+      --shift-cyan-ice: linear-gradient(135deg, #05e1fd 0%, #5ebebe 100%);
+      --shift-obsidian-teal: linear-gradient(135deg, #020c1f 0%, #00496e 100%);
+      --shift-crimson-cyan: linear-gradient(135deg, #ff2453 0%, #05e1fd 100%);
+
+      /* Active Theme Surfaces */
+      --bg-primary: #020c1f;
+      --bg-elevated: rgba(6, 20, 46, 0.78);
+      --bg-glass: rgba(2, 12, 31, 0.88);
+      --bg-subtle: rgba(0, 73, 110, 0.24);
+      --bg-input: rgba(2, 12, 31, 0.92);
+      --text-primary: #ffffff;
+      --text-secondary: #f1f0ef;
+      --text-muted: #93c2d4;
+      --accent-primary: #05e1fd;
+      --accent-secondary: #ff2453;
+      --border-subtle: rgba(94, 190, 190, 0.2);
+      --border-strong: rgba(5, 225, 253, 0.55);
+      --border-crimson: rgba(255, 36, 83, 0.55);
+      --shadow-elevated: 0 24px 60px rgba(0, 0, 0, 0.55);
+      --shadow-glow: 0 0 38px rgba(5, 225, 253, 0.22);
+    }
+
+    [data-theme="bright"] {
+      --bg-primary: #f1f0ef;
+      --bg-elevated: rgba(255, 255, 255, 0.92);
+      --bg-glass: rgba(241, 240, 239, 0.9);
+      --bg-subtle: rgba(0, 73, 110, 0.08);
+      --bg-input: #ffffff;
+      --text-primary: #020c1f;
+      --text-secondary: #071f40;
+      --text-muted: #00496e;
+      --accent-primary: #00496e;
+      --accent-secondary: #ff2453;
+      --border-subtle: rgba(0, 73, 110, 0.16);
+      --border-strong: rgba(0, 73, 110, 0.55);
+      --border-crimson: rgba(255, 36, 83, 0.65);
+      --shadow-elevated: 0 20px 45px rgba(2, 12, 31, 0.08);
+      --shadow-glow: 0 14px 34px rgba(0, 73, 110, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-secondary);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      transition: background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Syncopate Display Typography Mandate */
+    h1, h2, h3, .brand-font {
+      font-family: 'Syncopate', 'Space Grotesk', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      line-height: 1.15;
+    }
+
+    h1 {
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+
+    .spec-font {
+      font-family: 'Space Grotesk', monospace, sans-serif;
+    }
+
+    /* Ambient Atmospheric Glow */
+    .ambient-backdrop {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(circle at 12% 16%, rgba(0, 73, 110, 0.36) 0%, transparent 45%),
+        radial-gradient(circle at 88% 24%, rgba(255, 36, 83, 0.1) 0%, transparent 35%),
+        radial-gradient(circle at 50% 85%, rgba(5, 225, 253, 0.08) 0%, transparent 48%);
+      transition: opacity 0.45s ease;
+    }
+
+    [data-theme="bright"] .ambient-backdrop {
+      background:
+        radial-gradient(circle at 12% 16%, rgba(5, 225, 253, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 88% 24%, rgba(255, 36, 83, 0.08) 0%, transparent 35%),
+        radial-gradient(circle at 50% 85%, rgba(0, 73, 110, 0.12) 0%, transparent 48%);
+    }
+
+    /* Full-Viewport Fixed DNA Canvas (DNA navigates along the visible glowing energy track) */
+    #dnaCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 10;
+      display: block;
+    }
+
+    /* Editorial Glass & Surface Cards */
+    .surface-nav {
+      background: var(--bg-glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .surface-card {
+      background: var(--bg-elevated);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-elevated);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, background-color 0.4s ease, box-shadow 0.3s ease;
+    }
+
+    .surface-card:hover {
+      border-color: var(--border-strong);
+    }
+
+    .surface-featured {
+      background: var(--shift-obsidian-teal);
+      border: 2px solid var(--crimson-red);
+      box-shadow: 0 0 35px rgba(255, 36, 83, 0.28);
+      color: #ffffff;
+    }
+
+    [data-theme="bright"] .surface-featured h3,
+    [data-theme="bright"] .surface-featured .bundle-price-text,
+    [data-theme="bright"] .surface-featured li {
+      color: #ffffff;
+    }
+
+    /* Gradient Text & Buttons */
+    .text-gradient-cyan {
+      background: var(--shift-cyan-ice);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .text-gradient-crimson {
+      background: var(--shift-crimson-cyan);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    [data-theme="bright"] .text-gradient-cyan {
+      background: linear-gradient(135deg, #00496e 0%, #00a8c6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn-primary-shift {
+      background: var(--shift-teal-cyan);
+      color: #020c1f;
+      font-weight: 700;
+      box-shadow: 0 10px 28px rgba(5, 225, 253, 0.25);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-primary-shift:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(5, 225, 253, 0.42);
+      filter: brightness(1.06);
+    }
+
+    .btn-crimson-pulse {
+      background: linear-gradient(135deg, #ff2453 0%, #d10036 100%);
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(255, 36, 83, 0.35);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-crimson-pulse:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(255, 36, 83, 0.55);
+      filter: brightness(1.08);
+    }
+
+    .btn-secondary-glass {
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      border: 1px solid var(--border-strong);
+      font-weight: 600;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-secondary-glass:hover {
+      background: var(--bg-subtle);
+      transform: translateY(-2px);
+    }
+
+    /* 3D Hero Packaging Card Perspective */
+    .hero-perspective {
+      perspective: 1100px;
+    }
+
+    .packaging-stage-card {
+      transform-style: preserve-3d;
+      transition: transform 0.18s ease-out;
+    }
+
+    .cad-grid-bg {
+      background-image:
+        linear-gradient(to right, rgba(5, 225, 253, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(5, 225, 253, 0.08) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #00496e;
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #05e1fd;
+    }
+  </style>
+</head>
+<body class="selection:bg-crimson selection:text-white">
+
+  <!-- Ambient Background Lighting -->
+  <div class="ambient-backdrop"></div>
+
+  <!-- HIGHLY DEFINED 3D DNA CANVAS (Visible Curving Guide Track + 36 Rungs + Red/Cyan Base Pairs + Spark Physics) -->
+  <canvas id="dnaCanvas" aria-hidden="true"></canvas>
+
+  <!-- Bottom-Left Floating Biometric Conduit Telemetry Pill (Locked to Right Flank) -->
+  <div
+    id="dnaStatusPill"
+    class="fixed bottom-5 left-5 z-30 hidden sm:inline-flex items-center gap-2.5 px-4 py-2 rounded-full surface-card text-[10px] font-bold uppercase tracking-wider spec-font select-none"
+  >
+    <span class="w-2 h-2 rounded-full bg-crimson animate-ping"></span>
+    <span style="color: var(--text-primary);">BIOMETRIC CONDUIT: <strong class="text-electric">RIGHT FLANK</strong></span>
+    <span class="w-1.5 h-1.5 rounded-full bg-electric"></span>
+  </div>
+
+  <!-- Non-Blocking Toast Message Box (Never uses alert()) -->
+  <div
+    id="studioToast"
+    class="fixed bottom-6 right-6 z-50 translate-y-24 opacity-0 pointer-events-none transition-all duration-300 surface-card px-5 py-3.5 rounded-2xl flex items-center gap-3 max-w-sm"
+    style="border-color: var(--accent-secondary);"
+  >
+    <span class="w-2.5 h-2.5 rounded-full bg-crimson animate-ping"></span>
+    <span id="studioToastText" class="text-xs sm:text-sm font-semibold" style="color: var(--text-primary);">Updated</span>
+  </div>
+
+  <!-- ==========================================================================
+       STICKY NAVIGATION BAR (WITH DARK / BRIGHT THEME SWITCH)
+       ========================================================================== -->
+  <header class="sticky top-0 z-40 surface-nav">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Pixelform Brand Mark with Official Aperture Logo -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="w-10 h-10 rounded-full border border-white/20 overflow-hidden flex items-center justify-center shadow-md group-hover:scale-105 group-hover:rotate-12 transition-all duration-300">
+          <svg class="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="pf-nav-grain" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" result="noise" />
+                <feColorMatrix type="matrix" values="1 0 0 0 1  0 1 0 0 1  0 0 1 0 1  0 0 0 22 -8" result="grain" />
+                <feComposite in2="SourceAlpha" operator="in" />
+              </filter>
+              <radialGradient id="pf-nav-mask" cx="80%" cy="25%" r="65%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+                <stop offset="50%" stop-color="#ffffff" stop-opacity="0.6" />
+                <stop offset="85%" stop-color="#000000" stop-opacity="0" />
+              </radialGradient>
+              <mask id="pf-nav-grain-mask">
+                <rect x="0" y="0" width="200" height="100" fill="url(#pf-nav-mask)" />
+              </mask>
+              <clipPath id="pf-nav-clip">
+                <circle cx="100" cy="100" r="94" />
+              </clipPath>
+            </defs>
+            <g clip-path="url(#pf-nav-clip)">
+              <!-- Top Obsidian Half -->
+              <path d="M 6 100 A 94 94 0 0 1 194 100 Z" fill="#181818" />
+              <!-- Top Right Hemisphere Stipple Grain -->
+              <rect x="6" y="6" width="188" height="94" fill="#ffffff" filter="url(#pf-nav-grain)" mask="url(#pf-nav-grain-mask)" opacity="0.9" />
+              <!-- Bottom Off-White / Silver Gray Half -->
+              <path d="M 6 100 A 94 94 0 0 0 194 100 Z" fill="#dcdcdc" />
+              <!-- Center Dual-Inverted Aperture Motif -->
+              <path d="M 68 100 A 32 32 0 0 1 132 100 Z" fill="#ffffff" />
+              <path d="M 86 100 A 14 14 0 0 1 114 100 Z" fill="#181818" />
+              <path d="M 68 100 A 32 32 0 0 0 132 100 Z" fill="#181818" />
+              <path d="M 86 100 A 14 14 0 0 0 114 100 Z" fill="#ffffff" />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-font text-sm sm:text-base font-bold tracking-widest block leading-none">
+            PIXELFORM
+          </span>
+          <span class="text-[9px] uppercase tracking-[0.24em] block mt-1 spec-font" style="color: var(--text-muted);">
+            Your thought, Our design.
+          </span>
+        </div>
+      </a>
+
+      <!-- Clean Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-[11px] font-bold uppercase tracking-[0.18em] spec-font" style="color: var(--text-secondary);">
+        <a href="#services" class="hover:text-electric transition-colors">Services</a>
+        <a href="#bundles" class="hover:text-crimson transition-colors">Bundles</a>
+        <a href="#pricing" class="hover:text-electric transition-colors">Rate Card</a>
+        <a href="#portfolio" class="hover:text-crimson transition-colors">Portfolio</a>
+        <a href="#contact" class="hover:text-electric transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right Controls: Rush Badge + Theme Switch + Live Quote Pill + CTA -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        
+        <!-- Pulsing Crimson Rush Indicator -->
+        <span class="hidden xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full surface-card text-[10px] font-bold text-crimson border-crimson/50 spec-font">
+          <span class="w-1.5 h-1.5 rounded-full bg-crimson animate-pulse"></span>
+          <span>RUSH 24-48H</span>
+        </span>
+
+        <!-- Dark / Bright Theme Switch -->
+        <button
+          type="button"
+          id="themeToggleBtn"
+          onclick="toggleStudioTheme()"
+          aria-label="Switch between Dark Obsidian and Bright Off-White theme"
+          class="px-3.5 py-2 rounded-full surface-card flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider cursor-pointer hover:scale-105 transition-all spec-font"
+          style="color: var(--text-primary);"
+        >
+          <!-- Moon Icon -->
+          <svg id="themeIconDark" class="w-4 h-4 text-electric" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+          </svg>
+          <!-- Sun Icon -->
+          <svg id="themeIconBright" class="w-4 h-4 text-deepteal hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+          <span id="themeTextLabel" class="hidden sm:inline">Dark</span>
+        </button>
+
+        <!-- Live Quote Pill -->
+        <a
+          href="#pricing"
+          class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full surface-card text-xs font-semibold spec-font"
+          style="color: var(--text-secondary);"
+        >
+          <span style="color: var(--text-muted);">Est:</span>
+          <strong id="navQuoteTotal" class="brand-font text-xs" style="color: var(--accent-primary);">₹0</strong>
+        </a>
+
+        <!-- Start Project CTA -->
+        <a
+          href="#contact"
+          class="hidden md:inline-flex px-5 py-2.5 rounded-full btn-crimson-pulse text-xs uppercase tracking-wider spec-font"
+        >
+          Start Project
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          type="button"
+          id="mobileNavBtn"
+          class="lg:hidden p-2.5 rounded-xl surface-card"
+          style="color: var(--text-primary);"
+          aria-label="Toggle Menu"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileNavDrawer" class="hidden lg:hidden surface-nav px-6 py-5 space-y-3 text-xs font-bold uppercase tracking-widest spec-font">
+      <a href="#services" class="block py-2 mobile-link" style="color: var(--text-primary);">01 // Services</a>
+      <a href="#bundles" class="block py-2 mobile-link" style="color: var(--text-primary);">02 // Value Bundles</a>
+      <a href="#pricing" class="block py-2 mobile-link" style="color: var(--text-primary);">03 // Rate Card &amp; Calculator</a>
+      <a href="#portfolio" class="block py-2 mobile-link" style="color: var(--text-primary);">04 // Portfolio</a>
+      <a href="#contact" class="block py-2 mobile-link text-crimson">05 // Start Project →</a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION (SYNCOPATE HEADING + PACKAGING CAD WITH RED DIELINE CUT LINES)
+       ========================================================================== -->
+  <section id="hero" class="relative z-20 pt-14 pb-24 sm:pt-20 sm:pb-28">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left 7 Columns: Editorial Copy & Syncopate Display Header -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full surface-card text-[10px] font-bold uppercase tracking-[0.22em] mb-6 spec-font" style="color: var(--accent-primary);">
+            <span class="w-2 h-2 rounded-full bg-crimson animate-pulse"></span>
+            <span>Graphics &amp; Package Design Studio</span>
+            <span class="text-crimson font-mono">• INDORE</span>
+          </div>
+
+          <!-- Studio Tagline -->
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-9 h-[2px] bg-gradient-to-r from-crimson to-electric inline-block"></span>
+            <p class="brand-font text-xs sm:text-sm tracking-[0.24em] text-gradient-crimson">
+              “Your thought, Our design.”
+            </p>
+          </div>
+
+          <!-- Mandatory Syncopate Display Hero Heading -->
+          <h1 class="brand-font text-2xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight leading-[1.22] mb-6">
+            Packaging &amp; Brand Identities Engineered to <span class="text-gradient-cyan">Command Attention.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg leading-relaxed mb-9 max-w-xl" style="color: var(--text-muted);">
+            Precision dieline packaging with press-ready cut &amp; crease geometry, photorealistic 3D product visualization, and cohesive brand systems built for ambitious D2C labels.
+          </p>
+
+          <!-- Primary CTAs -->
+          <div class="flex flex-wrap items-center gap-4 mb-12">
+            <a href="#bundles" class="px-7 py-4 rounded-full btn-crimson-pulse text-xs sm:text-sm uppercase tracking-wider inline-flex items-center gap-3 spec-font">
+              <span>Explore Value Bundles</span>
+              <span class="px-2 py-0.5 rounded-full bg-obsidian text-crimson text-[10px] font-extrabold">Save 35%</span>
+            </a>
+            <a href="#pricing" class="px-7 py-4 rounded-full btn-secondary-glass text-xs sm:text-sm uppercase tracking-wider spec-font">
+              Build Custom Quote
+            </a>
+          </div>
+
+          <!-- Clean Architectural Metrics -->
+          <div class="grid grid-cols-3 gap-6 pt-7 border-t" style="border-color: var(--border-subtle);">
+            <div>
+              <strong class="brand-font text-base sm:text-lg block text-crimson">100%</strong>
+              <span class="text-xs spec-font" style="color: var(--text-muted);">Press-Ready Dielines</span>
+            </div>
+            <div>
+              <strong class="brand-font text-base sm:text-lg block text-electric">24–48H</strong>
+              <span class="text-xs spec-font" style="color: var(--text-muted);">Rush Turnaround</span>
+            </div>
+            <div>
+              <strong class="brand-font text-base sm:text-lg block">5 Pillars</strong>
+              <span class="text-xs spec-font" style="color: var(--text-muted);">Identity to 3D Render</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 5 Columns: Interactive 3D / Authentic CAD Packaging Card with Red Dielines -->
+        <div class="lg:col-span-5 hero-perspective" id="heroCardStage">
+          <div id="heroTiltCard" class="packaging-stage-card surface-card rounded-3xl p-6 sm:p-7 relative overflow-hidden border-crimson/30">
+            
+            <!-- Top Bar: Spec + Mode Switcher -->
+            <div class="flex items-center justify-between gap-2 pb-4 mb-5 border-b" style="border-color: var(--border-subtle);">
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-[0.2em] block text-crimson spec-font">
+                  PACKAGING CAD // PF-DIELINE v3.2
+                </span>
+                <span class="text-xs font-semibold" style="color: var(--text-muted);">
+                  Interactive Dieline Geometry
+                </span>
+              </div>
+              <div class="inline-flex rounded-full p-1 bg-obsidian/70 border border-white/10">
+                <button
+                  type="button"
+                  id="btnModeCAD"
+                  onclick="setPackagingPreviewMode('cad')"
+                  class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider btn-crimson-pulse spec-font"
+                >
+                  Dieline CAD
+                </button>
+                <button
+                  type="button"
+                  id="btnMode3D"
+                  onclick="setPackagingPreviewMode('3d')"
+                  class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-offwhite/80 hover:text-white spec-font"
+                >
+                  3D Render
+                </button>
+              </div>
+            </div>
+
+            <!-- Interactive Stage Viewport -->
+            <div class="cad-grid-bg rounded-2xl p-5 border relative min-h-[250px] flex flex-col items-center justify-center text-center" style="border-color: var(--border-subtle); background-color: rgba(2, 12, 31, 0.88);">
+              
+              <!-- Structural Dieline CAD View (Authentic Red Cut & Bleed Lines) -->
+              <div id="previewCADView" class="w-full space-y-3">
+                <svg class="w-full h-40 mx-auto" viewBox="0 0 280 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Outer 3mm Bleed Line (Thin Red Dashed) -->
+                  <rect x="22" y="8" width="236" height="136" stroke="#ff2453" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.65"/>
+                  
+                  <!-- Main Cut Lines (Solid Neon Crimson Red #ff2453) -->
+                  <rect x="25" y="35" width="55" height="85" stroke="#ff2453" stroke-width="1.8"/>
+                  <rect x="80" y="35" width="65" height="85" stroke="#ff2453" stroke-width="1.8"/>
+                  <rect x="145" y="35" width="55" height="85" stroke="#ff2453" stroke-width="1.8"/>
+                  <rect x="200" y="35" width="55" height="85" stroke="#ff2453" stroke-width="1.8"/>
+                  
+                  <!-- Top & Bottom Flaps (Solid Red Trim Cut) -->
+                  <path d="M80 35 L88 12 L137 12 L145 35" stroke="#ff2453" stroke-width="1.8"/>
+                  <path d="M80 120 L88 142 L137 142 L145 120" stroke="#ff2453" stroke-width="1.8"/>
+                  <path d="M200 35 L208 18 L247 18 L255 35" stroke="#ff2453" stroke-width="1.4"/>
+                  
+                  <!-- Fold & Crease Lines (Dashed Electric Cyan #05e1fd) -->
+                  <line x1="80" y1="35" x2="80" y2="120" stroke="#05e1fd" stroke-width="1.4" stroke-dasharray="4 3"/>
+                  <line x1="145" y1="35" x2="145" y2="120" stroke="#05e1fd" stroke-width="1.4" stroke-dasharray="4 3"/>
+                  <line x1="200" y1="35" x2="200" y2="120" stroke="#05e1fd" stroke-width="1.4" stroke-dasharray="4 3"/>
+                  
+                  <!-- Dynamic Labels & Registration Crosshair -->
+                  <circle cx="268" cy="16" r="5" stroke="#05e1fd" stroke-width="1"/>
+                  <line x1="268" y1="8" x2="268" y2="24" stroke="#ff2453" stroke-width="1"/>
+                  <line x1="260" y1="16" x2="276" y2="16" stroke="#ff2453" stroke-width="1"/>
+                  <!-- Brand Aperture Logo in CAD Front Panel -->
+                  <circle cx="112" cy="62" r="12" fill="#181818" stroke="#ff2453" stroke-width="1"/>
+                  <path d="M 100 62 A 12 12 0 0 0 124 62 Z" fill="#dcdcdc"/>
+                  <circle cx="112" cy="62" r="4.5" fill="#ffffff"/>
+                  <circle cx="112" cy="62" r="2" fill="#181818"/>
+                  <text x="112" y="86" fill="#ffffff" font-size="8" font-family="'Syncopate', sans-serif" font-weight="bold" text-anchor="middle">FRONT</text>
+                  <text x="172" y="78" fill="#05e1fd" font-size="7" font-family="'Space Grotesk', sans-serif" text-anchor="middle">SIDE B</text>
+                  <text x="52" y="78" fill="#05e1fd" font-size="7" font-family="'Space Grotesk', sans-serif" text-anchor="middle">SIDE A</text>
+                </svg>
+
+                <div class="flex items-center justify-center gap-4 text-[10px] spec-font">
+                  <span class="inline-flex items-center gap-1.5 text-crimson font-bold">
+                    <span class="w-2.5 h-0.5 bg-crimson inline-block"></span> RED = DIE CUT / TRIM
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 text-electric font-semibold">
+                    <span class="w-2.5 h-0.5 bg-electric inline-block border-b border-dashed"></span> CYAN = CREASE FOLD
+                  </span>
+                </div>
+              </div>
+
+              <!-- 3D Render View -->
+              <div id="preview3DView" class="hidden w-full space-y-4">
+                <div class="mx-auto w-36 h-40 rounded-2xl flex flex-col items-center justify-between p-4 border relative shadow-2xl" style="background: linear-gradient(145deg, #020c1f 0%, #00496e 50%, #ff2453 100%); border-color: rgba(255,36,83,0.7);">
+                  <span class="text-[9px] font-bold uppercase tracking-widest text-crimson self-start spec-font">300 DPI • SPOT UV</span>
+                  <div class="flex flex-col items-center">
+                    <!-- Embedded Official Logo Symbol -->
+                    <div class="w-10 h-10 rounded-full border border-white/30 overflow-hidden shadow-lg mb-1.5">
+                      <svg class="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                          <path d="M 6 100 A 94 94 0 0 1 194 100 Z" fill="#181818" />
+                          <path d="M 6 100 A 94 94 0 0 0 194 100 Z" fill="#dcdcdc" />
+                          <path d="M 68 100 A 32 32 0 0 1 132 100 Z" fill="#ffffff" />
+                          <path d="M 86 100 A 14 14 0 0 1 114 100 Z" fill="#181818" />
+                          <path d="M 68 100 A 32 32 0 0 0 132 100 Z" fill="#181818" />
+                          <path d="M 86 100 A 14 14 0 0 0 114 100 Z" fill="#ffffff" />
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="brand-font text-xs font-bold text-white tracking-widest">PIXELFORM</div>
+                    <div class="text-[10px] text-offwhite/90 mt-0.5 spec-font">Botanical Box SKU</div>
+                  </div>
+                  <span class="px-2 py-0.5 rounded bg-obsidian/90 text-[9px] text-electric font-semibold spec-font">Matte Finish</span>
+                </div>
+                <p class="text-xs text-offwhite/80">
+                  Studio-lit 3D packaging visualization calibrated for retail &amp; pitch decks.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Brand Kit Palette Bar with Hex Copying -->
+            <div class="mt-5 pt-4 border-t flex items-center justify-between gap-2" style="border-color: var(--border-subtle);">
+              <span class="text-[10px] font-bold uppercase tracking-wider spec-font" style="color: var(--text-muted);">Brand Swatches:</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="copyHex('#ff2453')" title="Copy #ff2453 (Neon Crimson Red)" class="w-6 h-6 rounded-full border border-white/40 bg-[#ff2453] hover:scale-110 transition-transform shadow-[0_0_10px_#ff2453]"></button>
+                <button type="button" onclick="copyHex('#020c1f')" title="Copy #020c1f (Obsidian Black)" class="w-6 h-6 rounded-full border border-white/30 bg-[#020c1f] hover:scale-110 transition-transform"></button>
+                <button type="button" onclick="copyHex('#05e1fd')" title="Copy #05e1fd (Electric Cyan)" class="w-6 h-6 rounded-full border border-white/30 bg-[#05e1fd] hover:scale-110 transition-transform"></button>
+                <button type="button" onclick="copyHex('#00496e')" title="Copy #00496e (Deep Teal)" class="w-6 h-6 rounded-full border border-white/30 bg-[#00496e] hover:scale-110 transition-transform"></button>
+                <button type="button" onclick="copyHex('#f1f0ef')" title="Copy #f1f0ef (Soft Off-White)" class="w-6 h-6 rounded-full border border-obsidian/40 bg-[#f1f0ef] hover:scale-110 transition-transform"></button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 1: 5 CORE SERVICES (CLEAN INTERACTIVE EDITORIAL ACCORDION)
+       ========================================================================== -->
+  <section id="services" class="relative z-20 py-24 border-t" style="border-color: var(--border-subtle);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.22em] block mb-3" style="color: var(--accent-primary);">
+            01 // Studio Capabilities
+          </span>
+          <h2 class="brand-font text-2xl sm:text-4xl font-extrabold">
+            Five Core Design Disciplines
+          </h2>
+        </div>
+        <p class="text-sm max-w-md" style="color: var(--text-muted);">
+          Select any discipline below to inspect what you get, how we work, deliverables, and ideal use cases.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- 1. Brand Identity Design -->
+        <div class="surface-card rounded-2xl overflow-hidden">
+          <button
+            type="button"
+            onclick="toggleServicePanel(0)"
+            class="w-full px-6 py-6 sm:px-8 flex items-center justify-between gap-4 text-left"
+          >
+            <div class="flex items-center gap-4 sm:gap-6">
+              <span class="brand-font text-xs sm:text-sm font-bold" style="color: var(--accent-primary);">01</span>
+              <div>
+                <h3 class="brand-font text-base sm:text-xl font-bold">Brand Identity Design</h3>
+                <p class="text-xs mt-1" style="color: var(--text-muted);">
+                  Best for: New startups and businesses that want to look established from day one.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="hidden sm:inline-block text-xs font-bold px-3.5 py-1 rounded-full surface-card" style="color: var(--accent-primary);">
+                From ₹3,500
+              </span>
+              <span id="srvIcon0" class="brand-font text-lg font-bold" style="color: var(--accent-primary);">−</span>
+            </div>
+          </button>
+
+          <div id="srvBody0" class="px-6 pb-7 sm:px-8 pt-3 border-t" style="border-color: var(--border-subtle);">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+              <div>
+                <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">What You Get</strong>
+                <p class="leading-relaxed">Logo (primary, secondary, icon mark), color palette, typography system, and a brand guidelines PDF.</p>
+              </div>
+              <div>
+                <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">How We Work</strong>
+                <p class="leading-relaxed">We start with a short brief on your audience, competitors and the feeling you want to create, then present 2 to 3 directions. You pick one and we refine it.</p>
+              </div>
+              <div class="flex flex-col justify-between">
+                <div>
+                  <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">Deliverables</strong>
+                  <p class="leading-relaxed">Logo files (AI, SVG, PNG), brand guide, social media kit.</p>
+                </div>
+                <a href="#pricing" onclick="switchRateCategory('brand')" class="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:underline" style="color: var(--accent-primary);">
+                  <span>Explore Brand Identity Rates</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Packaging & Label Design -->
+        <div class="surface-card rounded-2xl overflow-hidden">
+          <button
+            type="button"
+            onclick="toggleServicePanel(1)"
+            class="w-full px-6 py-6 sm:px-8 flex items-center justify-between gap-4 text-left"
+          >
+            <div class="flex items-center gap-4 sm:gap-6">
+              <span class="brand-font text-xs sm:text-sm font-bold" style="color: var(--accent-primary);">02</span>
+              <div>
+                <h3 class="brand-font text-base sm:text-xl font-bold">Packaging &amp; Label Design</h3>
+                <p class="text-xs mt-1" style="color: var(--text-muted);">
+                  Best for: Food, herbal, wellness, cosmetics and D2C products.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="hidden sm:inline-block text-xs font-bold px-3.5 py-1 rounded-full surface-card" style="color: var(--accent-primary);">
+                From ₹3,000
+              </span>
+              <span id="srvIcon1" class="brand-font text-lg font-bold" style="color: var(--accent-primary);">+</span>
+            </div>
+          </button>
+
+          <div id="srvBody1" class="hidden px-6 pb-7 sm:px-8 pt-3 border-t" style="border-color: var(--border-subtle);">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+              <div>
+                <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">What You Get</strong>
+                <p class="leading-relaxed">The visual design of your product’s pack, covering labels, box artwork, pouches, sleeves and stickers.</p>
+              </div>
+              <div>
+                <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">How We Work</strong>
+                <p class="leading-relaxed">We design on a precise dieline, include required elements (ingredients, barcode, legal text), and deliver files your printer can use directly.</p>
+              </div>
+              <div class="flex flex-col justify-between">
+                <div>
+                  <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">Deliverables</strong>
+                  <p class="leading-relaxed">Print-ready PDFs, dieline layouts, color-managed files.</p>
+                </div>
+                <a href="#pricing" onclick="switchRateCategory('packaging')" class="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:underline" style="color: var(--accent-primary);">
+                  <span>Explore Packaging Rates</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Social Media & Marketing Creatives -->
+        <div class="surface-card rounded-2xl overflow-hidden">
+          <button
+            type="button"
+            onclick="toggleServicePanel(2)"
+            class="w-full px-6 py-6 sm:px-8 flex items-center justify-between gap-4 text-left"
+          >
+            <div class="flex items-center gap-4 sm:gap-6">
+              <span class="brand-font text-xs sm:text-sm font-bold" style="color: var(--accent-primary);">03</span>
+              <div>
+                <h3 class="brand-font text-base sm:text-xl font-bold">Social Media &amp; Marketing Creatives</h3>
+                <p class="text-xs mt-1" style="color: var(--text-muted);">
+                  Best for: Brands that need steady, scroll-stopping content without hiring an in-house designer.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="hidden sm:inline-block text-xs font-bold px-3.5 py-1 rounded-full surface-card" style="color: var(--accent-primary);">
+                From ₹400
+              </span>
+              <span id="srvIcon2" class="brand-font text-lg font-bold" style="color: var(--accent-primary);">+</span>
+            </div>
+          </button>
+
+          <div id="srvBody2" class="hidden px-6 pb-7 sm:px-8 pt-3 border-t" style="border-color: var(--border-subtle);">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+              <div>
+                <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">What You Get</strong>
+                <p class="leading-relaxed">Instagram posts, carousels, stories, ad creatives, banners and launch campaign visuals.</p>
+              </div>
+              <div>
+                <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">How We Work</strong>
+                <p class="leading-relaxed">We build a consistent template system around your brand, so posting stays fast and every post looks like it belongs to you.</p>
+              </div>
+              <div class="flex flex-col justify-between">
+                <div>
+                  <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">Deliverables</strong>
+                  <p class="leading-relaxed">Editable templates, final exports for each platform, monthly content packs.</p>
+                </div>
+                <a href="#pricing" onclick="switchRateCategory('social')" class="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:underline" style="color: var(--accent-primary);">
+                  <span>Explore Social &amp; Marketing Rates</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Print & Promotional Design -->
+        <div class="surface-card rounded-2xl overflow-hidden">
+          <button
+            type="button"
+            onclick="toggleServicePanel(3)"
+            class="w-full px-6 py-6 sm:px-8 flex items-center justify-between gap-4 text-left"
+          >
+            <div class="flex items-center gap-4 sm:gap-6">
+              <span class="brand-font text-xs sm:text-sm font-bold" style="color: var(--accent-primary);">04</span>
+              <div>
+                <h3 class="brand-font text-base sm:text-xl font-bold">Print &amp; Promotional Design</h3>
+                <p class="text-xs mt-1" style="color: var(--text-muted);">
+                  Best for: Local businesses, events and offline marketing.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="hidden sm:inline-block text-xs font-bold px-3.5 py-1 rounded-full surface-card" style="color: var(--accent-primary);">
+                From ₹600
+              </span>
+              <span id="srvIcon3" class="brand-font text-lg font-bold" style="color: var(--accent-primary);">+</span>
+            </div>
+          </button>
+
+          <div id="srvBody3" class="hidden px-6 pb-7 sm:px-8 pt-3 border-t" style="border-color: var(--border-subtle);">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+              <div>
+                <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">What You Get</strong>
+                <p class="leading-relaxed">Business cards, brochures, flyers, posters, catalogues, menus, standees and letterheads.</p>
+              </div>
+              <div>
+                <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">How We Work</strong>
+                <p class="leading-relaxed">We design to the exact print size, with bleed and margins set up properly, so there are no surprises at the press.</p>
+              </div>
+              <div class="flex flex-col justify-between">
+                <div>
+                  <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">Deliverables</strong>
+                  <p class="leading-relaxed">Print-ready files plus web versions.</p>
+                </div>
+                <a href="#pricing" onclick="switchRateCategory('print')" class="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:underline" style="color: var(--accent-primary);">
+                  <span>Explore Print &amp; Promo Rates</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. 3D Mockups & Visualization -->
+        <div class="surface-card rounded-2xl overflow-hidden">
+          <button
+            type="button"
+            onclick="toggleServicePanel(4)"
+            class="w-full px-6 py-6 sm:px-8 flex items-center justify-between gap-4 text-left"
+          >
+            <div class="flex items-center gap-4 sm:gap-6">
+              <span class="brand-font text-xs sm:text-sm font-bold" style="color: var(--accent-primary);">05</span>
+              <div>
+                <h3 class="brand-font text-base sm:text-xl font-bold">3D Mockups &amp; Visualization</h3>
+                <p class="text-xs mt-1" style="color: var(--text-muted);">
+                  Best for: Showing a product before it’s manufactured, and making listings look premium.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="hidden sm:inline-block text-xs font-bold px-3.5 py-1 rounded-full surface-card" style="color: var(--accent-primary);">
+                From ₹1,000
+              </span>
+              <span id="srvIcon4" class="brand-font text-lg font-bold" style="color: var(--accent-primary);">+</span>
+            </div>
+          </button>
+
+          <div id="srvBody4" class="hidden px-6 pb-7 sm:px-8 pt-3 border-t" style="border-color: var(--border-subtle);">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+              <div>
+                <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">What You Get</strong>
+                <p class="leading-relaxed">Realistic renders of your packaging, products and branding on real-world surfaces.</p>
+              </div>
+              <div>
+                <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">How We Work</strong>
+                <p class="leading-relaxed">We place your final design on 3D models, with lighting and angles chosen for the product.</p>
+              </div>
+              <div class="flex flex-col justify-between">
+                <div>
+                  <strong class="text-[11px] font-bold uppercase tracking-widest block mb-1.5" style="color: var(--accent-primary);">Deliverables</strong>
+                  <p class="leading-relaxed">High-resolution renders for your website, store listings, pitch decks and ads.</p>
+                </div>
+                <a href="#pricing" onclick="switchRateCategory('mockups')" class="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:underline" style="color: var(--accent-primary);">
+                  <span>Explore 3D Mockup Rates</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2: VALUE BUNDLES (THE MAIN SELLING POINT)
+       ========================================================================== -->
+  <section id="bundles" class="relative z-20 py-24 border-t" style="border-color: var(--border-subtle);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.22em] block mb-3 text-crimson spec-font">
+            02 // Value Packages
+          </span>
+          <h2 class="brand-font text-xl sm:text-3xl font-bold">
+            Curated Studio Bundles
+          </h2>
+        </div>
+        <p class="text-sm max-w-md" style="color: var(--text-muted);">
+          Combine brand identity, print-ready packaging dielines, 3D renders, and social launch assets to save up to 35%.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        
+        <!-- Starter -->
+        <div class="surface-card rounded-3xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-bold uppercase tracking-widest spec-font" style="color: var(--text-muted);">Starter</span>
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-bold spec-font" style="background: var(--bg-subtle); color: var(--accent-primary);">Saves ~25%</span>
+            </div>
+            <div class="brand-font text-xl sm:text-2xl font-bold mb-5">₹6,999</div>
+            <ul class="space-y-3 text-sm mb-8 border-t pt-5" style="border-color: var(--border-subtle);">
+              <li class="flex items-start gap-2"><span class="text-crimson">•</span><span>Logo Design</span></li>
+              <li class="flex items-start gap-2"><span class="text-crimson">•</span><span>1-Page Style Sheet</span></li>
+              <li class="flex items-start gap-2"><span class="text-crimson">•</span><span>5 Social Media Posts</span></li>
+              <li class="flex items-start gap-2"><span class="text-crimson">•</span><span>Business Card</span></li>
+            </ul>
+          </div>
+          <button
+            type="button"
+            onclick="addBundleToQuote('Starter Bundle', 6999, false)"
+            class="w-full py-3.5 rounded-full btn-secondary-glass text-xs uppercase tracking-wider spec-font"
+          >
+            + Add Starter
+          </button>
+        </div>
+
+        <!-- Brand Pack (Featured with Crimson Accent) -->
+        <div class="surface-card surface-featured rounded-3xl p-7 flex flex-col justify-between lg:-translate-y-2">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-crimson spec-font">★ STUDIO BESTSELLER</span>
+              <span class="px-2.5 py-1 rounded-full bg-crimson text-white text-[10px] font-extrabold spec-font">Saves ~30%</span>
+            </div>
+            <div class="brand-font bundle-price-text text-xl sm:text-2xl font-bold mb-5">₹19,999</div>
+            <ul class="space-y-3 text-sm mb-8 border-t border-white/20 pt-5">
+              <li class="flex items-start gap-2"><span class="text-crimson">✦</span><span><strong>Full Brand Identity</strong></span></li>
+              <li class="flex items-start gap-2"><span class="text-crimson">✦</span><span><strong>1 Packaging SKU (Red Dieline)</strong></span></li>
+              <li class="flex items-start gap-2"><span class="text-crimson">✦</span><span><strong>3D Mockup Set (5 Angles)</strong></span></li>
+              <li class="flex items-start gap-2"><span class="text-crimson">✦</span><span><strong>5 Social Posts</strong></span></li>
+              <li class="flex items-start gap-2"><span class="text-crimson">✦</span><span class="text-electric font-semibold">Source Files Included Free</span></li>
+            </ul>
+          </div>
+          <button
+            type="button"
+            onclick="addBundleToQuote('Brand Pack Bundle', 19999, true)"
+            class="w-full py-3.5 rounded-full btn-crimson-pulse text-xs uppercase tracking-wider spec-font"
+          >
+            + Select Brand Pack
+          </button>
+        </div>
+
+        <!-- Full Identity -->
+        <div class="surface-card rounded-3xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-bold uppercase tracking-widest spec-font" style="color: var(--text-muted);">Full Identity</span>
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-bold spec-font bg-crimson/20 text-crimson">Saves ~35%</span>
+            </div>
+            <div class="brand-font text-xl sm:text-2xl font-bold mb-5">₹39,999</div>
+            <ul class="space-y-3 text-sm mb-8 border-t pt-5" style="border-color: var(--border-subtle);">
+              <li class="flex items-start gap-2"><span class="text-electric">•</span><span><strong>Full Brand Identity Suite</strong></span></li>
+              <li class="flex items-start gap-2"><span class="text-electric">•</span><span><strong>3-SKU Packaging Range</strong></span></li>
+              <li class="flex items-start gap-2"><span class="text-electric">•</span><span><strong>3D Product Mockups</strong></span></li>
+              <li class="flex items-start gap-2"><span class="text-electric">•</span><span><strong>12-Post Social Pack + Flyer</strong></span></li>
+              <li class="flex items-start gap-2"><span class="text-electric">•</span><span class="text-crimson font-semibold">Source Files Included Free</span></li>
+            </ul>
+          </div>
+          <button
+            type="button"
+            onclick="addBundleToQuote('Full Identity Bundle', 39999, true)"
+            class="w-full py-3.5 rounded-full btn-secondary-glass text-xs uppercase tracking-wider spec-font"
+          >
+            + Select Full Identity
+          </button>
+        </div>
+
+        <!-- Monthly Retainer -->
+        <div class="surface-card rounded-3xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-bold uppercase tracking-widest spec-font" style="color: var(--text-muted);">Monthly Retainer</span>
+              <span class="px-2.5 py-1 rounded-full text-[11px] font-bold spec-font" style="background: var(--bg-subtle); color: var(--accent-primary);">Ongoing</span>
+            </div>
+            <div class="brand-font text-xl sm:text-2xl font-bold mb-5">
+              ₹9,999<span class="text-xs font-jakarta font-normal" style="color: var(--text-muted);">/mo</span>
+            </div>
+            <ul class="space-y-3 text-sm mb-8 border-t pt-5" style="border-color: var(--border-subtle);">
+              <li class="flex items-start gap-2"><span class="text-crimson">•</span><span>12 Social Media Posts</span></li>
+              <li class="flex items-start gap-2"><span class="text-crimson">•</span><span>2 Carousels (5–7 slides)</span></li>
+              <li class="flex items-start gap-2"><span class="text-crimson">•</span><span>1 Ad Creative (2 size variants)</span></li>
+              <li class="flex items-start gap-2"><span class="text-crimson">•</span><span>Consistent Brand System</span></li>
+            </ul>
+          </div>
+          <button
+            type="button"
+            onclick="addBundleToQuote('Monthly Retainer (₹9,999/mo)', 9999, false)"
+            class="w-full py-3.5 rounded-full btn-secondary-glass text-xs uppercase tracking-wider spec-font"
+          >
+            + Subscribe Retainer
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: INTERACTIVE RATE CARD & LIVE QUOTE ESTIMATOR
+       ========================================================================== -->
+  <section id="pricing" class="relative z-20 py-24 border-t" style="border-color: var(--border-subtle);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.22em] block mb-3 text-crimson spec-font">
+            03 // Transparent Pricing
+          </span>
+          <h2 class="brand-font text-xl sm:text-3xl font-bold">
+            Rate Card &amp; Live Calculator
+          </h2>
+        </div>
+
+        <!-- 5 Category Filter Tabs -->
+        <div class="flex flex-wrap gap-2 spec-font" role="tablist">
+          <button type="button" data-cat="brand" onclick="switchRateCategory('brand')" class="cat-tab px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider btn-primary-shift">
+            1. Brand Identity
+          </button>
+          <button type="button" data-cat="packaging" onclick="switchRateCategory('packaging')" class="cat-tab px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider surface-card">
+            2. Packaging
+          </button>
+          <button type="button" data-cat="social" onclick="switchRateCategory('social')" class="cat-tab px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider surface-card">
+            3. Social
+          </button>
+          <button type="button" data-cat="print" onclick="switchRateCategory('print')" class="cat-tab px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider surface-card">
+            4. Print
+          </button>
+          <button type="button" data-cat="mockups" onclick="switchRateCategory('mockups')" class="cat-tab px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider surface-card">
+            5. 3D Mockups
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left 7 Columns: Tabbed Rate Rows -->
+        <div class="lg:col-span-7 surface-card rounded-3xl overflow-hidden">
+          <div class="px-6 py-4 border-b flex items-center justify-between" style="border-color: var(--border-subtle);">
+            <h3 id="activeCategoryTitle" class="brand-font text-xs sm:text-sm font-bold">1. Brand Identity</h3>
+            <span class="text-xs spec-font" style="color: var(--text-muted);">2 revision rounds included</span>
+          </div>
+          <div id="rateCardRows" class="divide-y" style="border-color: var(--border-subtle);"></div>
+        </div>
+
+        <!-- Right 5 Columns: Live Quote Calculator Sidebar with Crimson Rush Options -->
+        <aside class="lg:col-span-5 surface-card rounded-3xl p-6 sm:p-7 lg:sticky lg:top-24 border-crimson/30">
+          <div class="flex items-center justify-between pb-4 border-b" style="border-color: var(--border-subtle);">
+            <div>
+              <h3 class="brand-font text-sm sm:text-base font-bold">Live Project Quote</h3>
+              <p class="text-xs mt-0.5 spec-font" style="color: var(--text-muted);">Instant studio cost &amp; 50% advance breakdown</p>
+            </div>
+            <button type="button" onclick="clearQuoteCart()" class="text-xs font-semibold underline hover:text-crimson spec-font" style="color: var(--text-muted);">
+              Reset
+            </button>
+          </div>
+
+          <!-- Selected Items List -->
+          <div id="quoteCartContainer" class="my-4 max-h-56 overflow-y-auto space-y-2 pr-1"></div>
+
+          <!-- Quote Modifiers: Rush Delivery (+30%) & Source Files (+₹2,000) -->
+          <div class="py-4 border-y space-y-3 text-xs" style="border-color: var(--border-subtle);">
+            <label class="flex items-start gap-3 cursor-pointer select-none">
+              <input type="checkbox" id="chkRushDelivery" onchange="recalculateQuote()" class="mt-0.5 w-4 h-4 accent-crimson rounded" />
+              <div>
+                <span class="font-bold flex items-center gap-1.5" style="color: var(--text-primary);">
+                  <span class="text-crimson">Rush Delivery (+30%)</span>
+                  <span class="px-1.5 py-0.2 rounded bg-crimson/20 text-crimson text-[9px] font-bold spec-font">24–48H</span>
+                </span>
+                <span style="color: var(--text-muted);">Priority press queue &amp; overnight turnaround</span>
+              </div>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer select-none">
+              <input type="checkbox" id="chkSourceFiles" onchange="recalculateQuote()" class="mt-0.5 w-4 h-4 accent-electric rounded" />
+              <div>
+                <span class="font-bold block" style="color: var(--text-primary);">Open Source Files (+₹2,000)</span>
+                <span style="color: var(--text-muted);">Included free in Brand Pack &amp; Full Identity</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Quote Totals Breakdown -->
+          <div class="my-5 space-y-2 text-xs sm:text-sm spec-font">
+            <div class="flex justify-between" style="color: var(--text-muted);">
+              <span>Subtotal</span>
+              <span id="valSubtotal" class="font-semibold" style="color: var(--text-primary);">₹0</span>
+            </div>
+            <div id="rowRushFee" class="hidden justify-between text-crimson font-bold">
+              <span>Rush Surcharge (+30%)</span>
+              <span id="valRushFee">₹0</span>
+            </div>
+            <div id="rowSourceFee" class="hidden justify-between" style="color: var(--accent-primary);">
+              <span>Source Files</span>
+              <span id="valSourceFee" class="font-semibold">₹2,000</span>
+            </div>
+            <div class="flex justify-between items-baseline pt-3 border-t" style="border-color: var(--border-subtle);">
+              <span class="brand-font text-xs font-bold">Grand Total</span>
+              <strong id="valGrandTotal" class="brand-font text-lg sm:text-xl text-gradient-crimson">₹0</strong>
+            </div>
+            <div class="flex justify-between items-center pt-1 font-semibold text-electric">
+              <span>50% Advance to Start</span>
+              <span id="valAdvance" class="brand-font text-xs">₹0</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 spec-font">
+            <button type="button" onclick="pushQuoteToContactForm()" class="py-3.5 px-4 rounded-full btn-crimson-pulse text-xs uppercase tracking-wider">
+              Push to Brief Form ↓
+            </button>
+            <button type="button" onclick="sendQuoteViaWhatsApp()" class="py-3.5 px-4 rounded-full btn-secondary-glass text-xs uppercase tracking-wider">
+              WhatsApp Quote ↗
+            </button>
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- Clean Quote Terms Strip -->
+      <div id="terms" class="mt-12 surface-card rounded-2xl p-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 text-xs spec-font">
+          <div>
+            <strong class="brand-font text-[10px] block mb-1 text-crimson">Payment</strong>
+            <p style="color: var(--text-muted);">50% advance, 50% before final files are released.</p>
+          </div>
+          <div>
+            <strong class="brand-font text-[10px] block mb-1 text-electric">Revisions</strong>
+            <p style="color: var(--text-muted);">2 rounds included, and each extra round is ₹500 to ₹1,000.</p>
+          </div>
+          <div>
+            <strong class="brand-font text-[10px] block mb-1 text-crimson">Rush Delivery</strong>
+            <p style="color: var(--text-muted);">+30% for work needed in 24–48 hours.</p>
+          </div>
+          <div>
+            <strong class="brand-font text-[10px] block mb-1 text-electric">Source Files</strong>
+            <p style="color: var(--text-muted);">Included only in Brand Pack and above. Charge ₹2,000 extra otherwise.</p>
+          </div>
+          <div>
+            <strong class="brand-font text-[10px] block mb-1 text-crimson">GST &amp; Print</strong>
+            <p style="color: var(--text-muted);">GST extra if registered. Print costs are not included in any of these prices.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: SELECTED WORKS & CANVA PORTFOLIO INTEGRATION
+       ========================================================================== -->
+  <section id="portfolio" class="relative z-20 py-24 border-t" style="border-color: var(--border-subtle);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.22em] block mb-3" style="color: var(--accent-primary);">
+            04 // Selected Works
+          </span>
+          <h2 class="brand-font text-2xl sm:text-4xl font-extrabold">
+            Portfolio &amp; Case Studies
+          </h2>
+        </div>
+        <a
+          href="https://canva.link/56n1tlyxnlwaij0"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-6 py-3.5 rounded-full btn-primary-shift text-xs uppercase tracking-wider w-fit"
+        >
+          Open Live Canva Portfolio ↗
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Portfolio Card 1 -->
+        <a href="https://canva.link/56n1tlyxnlwaij0" target="_blank" rel="noopener noreferrer" class="surface-card rounded-3xl p-7 flex flex-col justify-between group hover:-translate-y-1.5">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-bold uppercase tracking-widest mb-5" style="color: var(--accent-primary);">
+              <span>Packaging &amp; Dielines</span>
+              <span>01</span>
+            </div>
+            <h3 class="brand-font text-lg font-bold mb-3 group-hover:text-electric transition-colors">
+              D2C Botanical &amp; Food Packaging
+            </h3>
+            <p class="text-sm leading-relaxed mb-8" style="color: var(--text-muted);">
+              Print-ready box, pouch, and label systems engineered with full statutory compliance and shelf-stopping appeal.
+            </p>
+          </div>
+          <div class="pt-4 border-t flex items-center justify-between text-xs font-semibold" style="border-color: var(--border-subtle);">
+            <span style="color: var(--text-muted);">CMYK Dielines + 3D Set</span>
+            <span style="color: var(--accent-primary);">View on Canva ↗</span>
+          </div>
+        </a>
+
+        <!-- Portfolio Card 2 -->
+        <a href="https://canva.link/56n1tlyxnlwaij0" target="_blank" rel="noopener noreferrer" class="surface-card rounded-3xl p-7 flex flex-col justify-between group hover:-translate-y-1.5">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-bold uppercase tracking-widest mb-5" style="color: var(--accent-primary);">
+              <span>Identity Systems</span>
+              <span>02</span>
+            </div>
+            <h3 class="brand-font text-lg font-bold mb-3 group-hover:text-electric transition-colors">
+              Startup Brand Architecture
+            </h3>
+            <p class="text-sm leading-relaxed mb-8" style="color: var(--text-muted);">
+              Complete primary, secondary, and icon mark suites paired with custom color palettes and brand guideline PDFs.
+            </p>
+          </div>
+          <div class="pt-4 border-t flex items-center justify-between text-xs font-semibold" style="border-color: var(--border-subtle);">
+            <span style="color: var(--text-muted);">AI / SVG + Brand Book</span>
+            <span style="color: var(--accent-primary);">View on Canva ↗</span>
+          </div>
+        </a>
+
+        <!-- Portfolio Card 3 -->
+        <a href="https://canva.link/56n1tlyxnlwaij0" target="_blank" rel="noopener noreferrer" class="surface-card rounded-3xl p-7 flex flex-col justify-between group hover:-translate-y-1.5">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-bold uppercase tracking-widest mb-5" style="color: var(--accent-primary);">
+              <span>3D &amp; Campaigns</span>
+              <span>03</span>
+            </div>
+            <h3 class="brand-font text-lg font-bold mb-3 group-hover:text-electric transition-colors">
+              3D Renders &amp; Social Systems
+            </h3>
+            <p class="text-sm leading-relaxed mb-8" style="color: var(--text-muted);">
+              Photorealistic 5-angle product renders and modular Instagram carousel templates built for rapid growth.
+            </p>
+          </div>
+          <div class="pt-4 border-t flex items-center justify-between text-xs font-semibold" style="border-color: var(--border-subtle);">
+            <span style="color: var(--text-muted);">Studio Renders + Social Kit</span>
+            <span style="color: var(--accent-primary);">View on Canva ↗</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: CONTACT & PROJECT BRIEF (FORMSPREE + WHATSAPP + SGSITS INDORE)
+       ========================================================================== -->
+  <section id="contact" class="relative z-20 py-24 border-t" style="border-color: var(--border-subtle);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Left 5 Columns: Direct Studio Details -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-[0.22em] block" style="color: var(--accent-primary);">
+            05 // Initiate Project
+          </span>
+          <h2 class="brand-font text-2xl sm:text-4xl font-extrabold">
+            Your Thought, Our Design.
+          </h2>
+          <p class="text-sm sm:text-base leading-relaxed" style="color: var(--text-muted);">
+            Send your project brief or itemized quote below. We respond within 24 hours with timeline milestones and 2 to 3 creative directions.
+          </p>
+
+          <div class="surface-card rounded-3xl p-6 space-y-4 text-sm">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-widest block" style="color: var(--accent-primary);">Studio Email</span>
+              <a href="mailto:pixelform.co@gmail.com" class="font-semibold hover:text-electric" style="color: var(--text-primary);">
+                pixelform.co@gmail.com
+              </a>
+            </div>
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-widest block" style="color: var(--accent-primary);">Phone &amp; WhatsApp</span>
+              <div class="flex flex-col gap-1 mt-0.5 font-semibold" style="color: var(--text-primary);">
+                <a href="tel:+917024980813" class="hover:text-electric">+91 70249 80813</a>
+                <a href="tel:+918085939434" class="hover:text-electric">+91 80859 39434</a>
+              </div>
+            </div>
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-widest block" style="color: var(--accent-primary);">Location</span>
+              <span>SGSITS, Indore, Madhya Pradesh, India</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="https://wa.me/917024980813?text=Hi%20Pixelform!%20I'd%20like%20to%20discuss%20a%20design%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-6 py-3.5 rounded-full btn-primary-shift text-xs uppercase tracking-wider"
+            >
+              Chat on WhatsApp (+91 70249 80813) ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Right 7 Columns: Formspree Serverless Lead Form -->
+        <form
+          id="pixelformBriefForm"
+          action="https://formspree.io/f/xeagqaop"
+          method="POST"
+          class="lg:col-span-7 surface-card rounded-3xl p-7 sm:p-9 space-y-5"
+        >
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="inputName" class="block text-[11px] font-bold uppercase tracking-wider mb-2" style="color: var(--text-muted);">Your Name *</label>
+              <input
+                type="text"
+                id="inputName"
+                name="name"
+                required
+                placeholder="e.g., Rohan Sharma"
+                class="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:border-electric"
+                style="background: var(--bg-input); border-color: var(--border-subtle); color: var(--text-primary);"
+              />
+            </div>
+            <div>
+              <label for="inputBrand" class="block text-[11px] font-bold uppercase tracking-wider mb-2" style="color: var(--text-muted);">Brand / Company</label>
+              <input
+                type="text"
+                id="inputBrand"
+                name="brand"
+                placeholder="e.g., Aura Botanicals"
+                class="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:border-electric"
+                style="background: var(--bg-input); border-color: var(--border-subtle); color: var(--text-primary);"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="inputEmail" class="block text-[11px] font-bold uppercase tracking-wider mb-2" style="color: var(--text-muted);">Email Address *</label>
+              <input
+                type="email"
+                id="inputEmail"
+                name="email"
+                required
+                placeholder="you@brand.com"
+                class="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:border-electric"
+                style="background: var(--bg-input); border-color: var(--border-subtle); color: var(--text-primary);"
+              />
+            </div>
+            <div>
+              <label for="inputPhone" class="block text-[11px] font-bold uppercase tracking-wider mb-2" style="color: var(--text-muted);">Phone / WhatsApp *</label>
+              <input
+                type="tel"
+                id="inputPhone"
+                name="phone"
+                required
+                placeholder="+91 98765 43210"
+                class="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:border-electric"
+                style="background: var(--bg-input); border-color: var(--border-subtle); color: var(--text-primary);"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="inputQuoteSummary" class="block text-[11px] font-bold uppercase tracking-wider mb-2" style="color: var(--accent-primary);">Selected Bundle / Estimate</label>
+            <input
+              type="text"
+              id="inputQuoteSummary"
+              name="selected_quote"
+              placeholder="e.g., Brand Pack (₹19,999) or custom rate card selection"
+              class="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:border-electric"
+              style="background: var(--bg-input); border-color: var(--border-strong); color: var(--text-primary);"
+            />
+          </div>
+
+          <div>
+            <label for="inputBrief" class="block text-[11px] font-bold uppercase tracking-wider mb-2" style="color: var(--text-muted);">Project Brief &amp; Timeline *</label>
+            <textarea
+              id="inputBrief"
+              name="message"
+              rows="4"
+              required
+              placeholder="Tell us about your product, number of SKUs, target audience, and launch timeline..."
+              class="w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:border-electric"
+              style="background: var(--bg-input); border-color: var(--border-subtle); color: var(--text-primary);"
+            ></textarea>
+          </div>
+
+          <button type="submit" id="btnSubmitBrief" class="w-full py-4 rounded-full btn-primary-shift text-xs sm:text-sm uppercase tracking-wider">
+            Submit Project Brief
+          </button>
+
+          <div id="formStatusBanner" class="hidden p-4 rounded-2xl text-xs sm:text-sm font-semibold"></div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative z-20 border-t py-10" style="border-color: var(--border-subtle);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style="color: var(--text-muted);">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-full border border-white/20 overflow-hidden flex-shrink-0">
+          <svg class="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path d="M 6 100 A 94 94 0 0 1 194 100 Z" fill="#181818" />
+              <path d="M 6 100 A 94 94 0 0 0 194 100 Z" fill="#dcdcdc" />
+              <path d="M 68 100 A 32 32 0 0 1 132 100 Z" fill="#ffffff" />
+              <path d="M 86 100 A 14 14 0 0 1 114 100 Z" fill="#181818" />
+              <path d="M 68 100 A 32 32 0 0 0 132 100 Z" fill="#181818" />
+              <path d="M 86 100 A 14 14 0 0 0 114 100 Z" fill="#ffffff" />
+            </g>
+          </svg>
+        </div>
+        <span class="brand-font text-sm font-extrabold" style="color: var(--text-primary);">PIXELFORM</span>
+        <span>— “Your thought, Our design.”</span>
+      </div>
+      <div>
+        © 2026 Pixelform Studio • SGSITS, Indore, MP • <a href="https://canva.link/56n1tlyxnlwaij0" target="_blank" rel="noopener" class="hover:underline" style="color: var(--accent-primary);">Canva Portfolio ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       JAVASCRIPT ENGINE:
+       1. Dark / Bright Theme Switcher
+       2. High-Definition 3D DNA Double Helix Traversing Right Flank Conduit Path
+       3. CAD/3D Mode Switcher with Authentic Red Dielines
+       4. Rate Card & Live Quote Calculator with Crimson Rush Logic
+       ========================================================================== -->
+  <script>
+    /* --------------------------------------------------------------------------
+       1. DARK / BRIGHT THEME SWITCHER
+       -------------------------------------------------------------------------- */
+    let activeTheme = 'dark';
+
+    function toggleStudioTheme() {
+      activeTheme = activeTheme === 'dark' ? 'bright' : 'dark';
+      document.documentElement.setAttribute('data-theme', activeTheme);
+
+      const iconDark = document.getElementById('themeIconDark');
+      const iconBright = document.getElementById('themeIconBright');
+      const label = document.getElementById('themeTextLabel');
+
+      if (activeTheme === 'bright') {
+        iconDark.classList.add('hidden');
+        iconBright.classList.remove('hidden');
+        label.textContent = 'Bright';
+        triggerToast('Switched to Bright Mode (#f1f0ef)');
+      } else {
+        iconBright.classList.add('hidden');
+        iconDark.classList.remove('hidden');
+        label.textContent = 'Dark';
+        triggerToast('Switched to Dark Mode (#020c1f)');
+      }
+    }
+
+    /* --------------------------------------------------------------------------
+       2. HIGH-DEFINITION 3D DNA HELIX & VISIBLE SCROLLING ENERGY CONDUIT PATH
+       - Guarded against non-finite values and early zero-dimension layouts
+       - 36 Rungs with Major & Minor biological groove twisting
+       - Strand A = Electric Cyan (#05e1fd), Strand B = Neon Crimson Red (#ff2453)
+       - Visible glowing spline track with technical dashed rails and pulses
+       - Anchored consistently on the right flank (NO side-swapping on scroll)
+       -------------------------------------------------------------------------- */
+    const dnaCanvas = document.getElementById('dnaCanvas');
+    const ctx = dnaCanvas.getContext('2d');
+
+    let viewportW = Math.max(window.innerWidth || 360, 320);
+    let viewportH = Math.max(window.innerHeight || 600, 320);
+
+    // Dedicated right-flank track anchor (consistently positioned without side-flipping)
+    function getAnchorRatio() {
+      return viewportW < 768 ? 0.90 : 0.88;
+    }
+
+    let currentAnchorX = viewportW * getAnchorRatio();
+    let velocityAnchorX = 0;
+
+    // Interactive pointer physics & spark particle array
+    const pointer = {
+      x: viewportW * 0.5,
+      y: viewportH * 0.5,
+      vx: 0,
+      vy: 0,
+      targetTilt: 0,
+      currentTilt: 0,
+      spinBoost: 0
+    };
+
+    const sparks = [];
+    function emitNucleotideSpark(x, y, color) {
+      if (sparks.length > 40 || !Number.isFinite(x) || !Number.isFinite(y)) return;
+      sparks.push({
+        x,
+        y,
+        vx: (Math.random() - 0.5) * 3,
+        vy: (Math.random() - 0.5) * 3,
+        color,
+        alpha: 1,
+        radius: Math.random() * 2 + 1
+      });
+    }
+
+    function resizeDnaStage() {
+      viewportW = Math.max(window.innerWidth || document.documentElement.clientWidth || 360, 320);
+      viewportH = Math.max(window.innerHeight || document.documentElement.clientHeight || 600, 320);
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      dnaCanvas.width = viewportW * dpr;
+      dnaCanvas.height = viewportH * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      const targetAnchor = viewportW * getAnchorRatio();
+      if (!Number.isFinite(currentAnchorX) || currentAnchorX <= 0) {
+        currentAnchorX = targetAnchor;
+      }
+    }
+
+    window.addEventListener('resize', resizeDnaStage);
+
+    window.addEventListener('mousemove', (e) => {
+      if (!Number.isFinite(e.clientX) || !Number.isFinite(e.clientY)) return;
+      pointer.vx = e.clientX - pointer.x;
+      pointer.vy = e.clientY - pointer.y;
+      pointer.x = e.clientX;
+      pointer.y = e.clientY;
+
+      const safeW = Math.max(viewportW, 1);
+      const normX = (e.clientX / safeW) * 2 - 1;
+      pointer.targetTilt = normX * 36;
+
+      const speed = Math.min(Math.hypot(pointer.vx, pointer.vy), 50);
+      pointer.spinBoost = Math.min((pointer.spinBoost || 0) + speed * 0.0015, 0.08);
+
+      if (Math.random() < 0.25) {
+        emitNucleotideSpark(pointer.x, pointer.y, Math.random() > 0.5 ? '#ff2453' : '#05e1fd');
+      }
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0] && Number.isFinite(e.touches[0].clientX)) {
+        pointer.x = e.touches[0].clientX;
+        pointer.y = e.touches[0].clientY;
+        pointer.spinBoost = 0.04;
+      }
+    }, { passive: true });
+
+    // Scroll listener: Computes normalized page progress to undulate DNA along its right track
+    let pageScrollRatio = 0;
+    window.addEventListener('scroll', () => {
+      const sy = window.scrollY || window.pageYOffset || 0;
+      const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight || 1;
+      const winHeight = window.innerHeight || 1;
+      const maxScroll = Math.max(docHeight - winHeight, 1);
+      pageScrollRatio = Math.min(Math.max(sy / maxScroll, 0), 1);
+      pointer.spinBoost = Math.min((pointer.spinBoost || 0) + 0.015, 0.08);
+    }, { passive: true });
+
+    let dnaPhase = 0;
+    let conduitPulseOffset = 0;
+    const RUNG_COUNT = 36; // Highly defined 36-rung double helix
+
+    // Evaluates the visible undulating conduit guide path coordinate at height y
+    function getConduitPathX(y) {
+      const safeH = Math.max(viewportH, 1);
+      const safeY = Number.isFinite(y) ? y : 0;
+      const normY = safeY / safeH;
+      const safeScroll = Number.isFinite(pageScrollRatio) ? pageScrollRatio : 0;
+      const wave = Math.sin(normY * Math.PI * 2.2 + safeScroll * 4) * (viewportW * 0.035);
+      const safeAnchor = Number.isFinite(currentAnchorX) ? currentAnchorX : (viewportW * getAnchorRatio());
+      return safeAnchor + wave;
+    }
+
+    function renderDnaFrame() {
+      if (!viewportW || !viewportH || viewportW <= 0 || viewportH <= 0) {
+        resizeDnaStage();
+      }
+
+      ctx.clearRect(0, 0, viewportW, viewportH);
+
+      // Spring-lerp towards the dedicated right flank track anchor
+      const targetX = viewportW * getAnchorRatio();
+      if (!Number.isFinite(currentAnchorX)) currentAnchorX = targetX;
+      if (!Number.isFinite(velocityAnchorX)) velocityAnchorX = 0;
+
+      const springForce = (targetX - currentAnchorX) * 0.048;
+      velocityAnchorX = (velocityAnchorX + springForce) * 0.82;
+      currentAnchorX += velocityAnchorX;
+
+      // Spin & tilt decay
+      if (!Number.isFinite(pointer.spinBoost)) pointer.spinBoost = 0;
+      if (!Number.isFinite(pointer.currentTilt)) pointer.currentTilt = 0;
+      if (!Number.isFinite(pointer.targetTilt)) pointer.targetTilt = 0;
+
+      pointer.spinBoost *= 0.94;
+      pointer.currentTilt += (pointer.targetTilt - pointer.currentTilt) * 0.08;
+      dnaPhase += 0.024 + pointer.spinBoost;
+      if (!Number.isFinite(dnaPhase)) dnaPhase = 0;
+
+      conduitPulseOffset = (conduitPulseOffset + 2.5) % Math.max(viewportH, 1);
+      if (!Number.isFinite(conduitPulseOffset)) conduitPulseOffset = 0;
+
+      const isBright = activeTheme === 'bright';
+      const colorStrandCyan = '#05e1fd';
+      const colorStrandCrimson = '#ff2453';
+      const trackStroke = isBright ? 'rgba(0, 73, 110, 0.22)' : 'rgba(5, 225, 253, 0.22)';
+      const mobileAlpha = viewportW < 768 ? 0.38 : 0.88;
+
+      /* ------------------------------------------------------------------------
+         A. DRAW VISIBLE GLOWING BIOMETRIC CONDUIT PATH (RAILS + TICKS + PULSES)
+         ------------------------------------------------------------------------ */
+      const railOffset = 22;
+      ctx.save();
+      ctx.globalAlpha = mobileAlpha * 0.8;
+
+      // Center glowing conduit line
+      ctx.beginPath();
+      let pathStarted = false;
+      for (let y = 0; y <= viewportH; y += 12) {
+        const px = getConduitPathX(y);
+        if (!Number.isFinite(px)) continue;
+        if (!pathStarted) {
+          ctx.moveTo(px, y);
+          pathStarted = true;
+        } else {
+          ctx.lineTo(px, y);
+        }
+      }
+      if (pathStarted) {
+        ctx.strokeStyle = trackStroke;
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+      }
+
+      // Parallel dashed technical guide rails
+      ctx.beginPath();
+      ctx.setLineDash([4, 6]);
+      pathStarted = false;
+      for (let y = 0; y <= viewportH; y += 14) {
+        const px = getConduitPathX(y);
+        if (!Number.isFinite(px)) continue;
+        if (!pathStarted) {
+          ctx.moveTo(px - railOffset, y);
+          pathStarted = true;
+        } else {
+          ctx.lineTo(px - railOffset, y);
+        }
+      }
+      if (pathStarted) {
+        ctx.strokeStyle = isBright ? 'rgba(0, 73, 110, 0.14)' : 'rgba(255, 36, 83, 0.25)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+
+      ctx.beginPath();
+      pathStarted = false;
+      for (let y = 0; y <= viewportH; y += 14) {
+        const px = getConduitPathX(y);
+        if (!Number.isFinite(px)) continue;
+        if (!pathStarted) {
+          ctx.moveTo(px + railOffset, y);
+          pathStarted = true;
+        } else {
+          ctx.lineTo(px + railOffset, y);
+        }
+      }
+      if (pathStarted) {
+        ctx.strokeStyle = isBright ? 'rgba(0, 73, 110, 0.14)' : 'rgba(5, 225, 253, 0.25)';
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+
+      // Flowing glowing energy pulses along the conduit
+      const pulseY1 = conduitPulseOffset;
+      const pulseY2 = (conduitPulseOffset + viewportH * 0.5) % Math.max(viewportH, 1);
+
+      [pulseY1, pulseY2].forEach((py, idx) => {
+        if (!Number.isFinite(py)) return;
+        const px = getConduitPathX(py);
+        if (!Number.isFinite(px)) return;
+        ctx.beginPath();
+        ctx.arc(px, py, 4, 0, Math.PI * 2);
+        ctx.fillStyle = idx === 0 ? '#ff2453' : '#05e1fd';
+        ctx.shadowColor = idx === 0 ? '#ff2453' : '#05e1fd';
+        ctx.shadowBlur = 12;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      });
+      ctx.restore();
+
+      /* ------------------------------------------------------------------------
+         B. HIGH-DEFINITION 3D DNA DOUBLE HELIX (36 RUNGS + MAJOR/MINOR GROOVES)
+         ------------------------------------------------------------------------ */
+      const helixRadius = Math.min(viewportW * 0.052, 54);
+      const topPad = Math.min(60, viewportH * 0.1);
+      const usableH = Math.max(viewportH - topPad * 2, 100);
+
+      const strandA = [];
+      const strandB = [];
+      const rungs = [];
+
+      for (let i = 0; i < RUNG_COUNT; i++) {
+        const t = i / (RUNG_COUNT - 1);
+        const y = topPad + t * usableH;
+        const basePathX = getConduitPathX(y);
+
+        // Interactive cursor repulsion & attraction
+        const dx = pointer.x - basePathX;
+        const dy = pointer.y - y;
+        const dist = Math.hypot(dx, dy);
+        const proximity = Math.max(0, 1 - dist / 220);
+
+        const repelOffsetX = proximity > 0 ? -(dx / (dist + 1)) * proximity * 28 : 0;
+        const tiltOffset = (t - 0.5) * pointer.currentTilt;
+
+        // Major and Minor biological groove twist: Strand B is offset by 2.2 rad instead of PI
+        const angleA = dnaPhase + i * 0.32 + proximity * 0.5;
+        const angleB = angleA + 2.2;
+        const localRadius = helixRadius * (1 + proximity * 0.25);
+
+        const x1 = basePathX + tiltOffset + repelOffsetX + Math.sin(angleA) * localRadius;
+        const z1 = Math.cos(angleA);
+
+        const x2 = basePathX + tiltOffset + repelOffsetX + Math.sin(angleB) * localRadius;
+        const z2 = Math.cos(angleB);
+
+        if (Number.isFinite(x1) && Number.isFinite(x2)) {
+          const nodeA = { x: x1, y, z: z1, proximity, color: colorStrandCyan };
+          const nodeB = { x: x2, y, z: z2, proximity, color: colorStrandCrimson };
+
+          strandA.push(nodeA);
+          strandB.push(nodeB);
+
+          rungs.push({
+            x1, y1: y, z1,
+            x2, y2: y, z2,
+            avgZ: (z1 + z2) * 0.5,
+            proximity
+          });
+        }
+      }
+
+      // Draw base-pair connecting rungs with depth gradient (Safe from non-finite errors)
+      rungs.sort((a, b) => a.avgZ - b.avgZ);
+      for (const rung of rungs) {
+        if (!Number.isFinite(rung.x1) || !Number.isFinite(rung.y1) || !Number.isFinite(rung.x2) || !Number.isFinite(rung.y2)) {
+          continue;
+        }
+
+        ctx.save();
+        const safeAvgZ = Number.isFinite(rung.avgZ) ? rung.avgZ : 0;
+        ctx.globalAlpha = Math.min(Math.max(mobileAlpha * (0.35 + (safeAvgZ + 1) * 0.35), 0), 1);
+
+        let rx2 = rung.x2;
+        let ry2 = rung.y2;
+        if (Math.abs(rung.x1 - rx2) < 0.01 && Math.abs(rung.y1 - ry2) < 0.01) {
+          rx2 += 1;
+        }
+
+        const grad = ctx.createLinearGradient(rung.x1, rung.y1, rx2, ry2);
+        grad.addColorStop(0, '#05e1fd');
+        grad.addColorStop(0.5, 'rgba(255,255,255,0.7)');
+        grad.addColorStop(1, '#ff2453');
+
+        ctx.beginPath();
+        ctx.moveTo(rung.x1, rung.y1);
+        ctx.lineTo(rung.x2, rung.y2);
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = 1.4 + (Number.isFinite(rung.proximity) ? rung.proximity : 0) * 1.5;
+        ctx.stroke();
+
+        // Hydrogen bond center node
+        const midX = (rung.x1 + rung.x2) * 0.5;
+        ctx.beginPath();
+        ctx.arc(midX, rung.y1, 1.8, 0, Math.PI * 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.fill();
+        ctx.restore();
+      }
+
+      // Draw continuous backbone strands
+      function drawBackbone(nodes, color) {
+        ctx.save();
+        ctx.globalAlpha = mobileAlpha * 0.55;
+        ctx.beginPath();
+        let started = false;
+        nodes.forEach((n) => {
+          if (!Number.isFinite(n.x) || !Number.isFinite(n.y)) return;
+          if (!started) {
+            ctx.moveTo(n.x, n.y);
+            started = true;
+          } else {
+            ctx.lineTo(n.x, n.y);
+          }
+        });
+        if (started) {
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 1.8;
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      drawBackbone(strandA, colorStrandCyan);
+      drawBackbone(strandB, colorStrandCrimson);
+
+      // Depth-sort all nucleotide spheres (Strand A Cyan + Strand B Neon Crimson)
+      const allSpheres = [...strandA, ...strandB];
+      allSpheres.sort((a, b) => a.z - b.z);
+
+      for (const s of allSpheres) {
+        if (!Number.isFinite(s.x) || !Number.isFinite(s.y) || !Number.isFinite(s.z)) continue;
+        const depth = Math.max(0, Math.min(1, (s.z + 1.3) / 2.3));
+        const r = Math.max(0.5, (2.6 + depth * 3.6) * (1 + (s.proximity || 0) * 0.35));
+
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, Math.min(1, mobileAlpha * (0.4 + depth * 0.6)));
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = s.color;
+        ctx.shadowColor = s.color;
+        ctx.shadowBlur = depth > 0.6 ? 10 : 0;
+        ctx.fill();
+
+        // Specular 3D lighting highlight dot
+        if (depth > 0.4) {
+          ctx.beginPath();
+          ctx.arc(s.x - r * 0.3, s.y - r * 0.3, r * 0.3, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+
+      // Render interactive sparks
+      for (let i = sparks.length - 1; i >= 0; i--) {
+        const p = sparks[i];
+        if (!Number.isFinite(p.x) || !Number.isFinite(p.y)) {
+          sparks.splice(i, 1);
+          continue;
+        }
+        p.x += p.vx;
+        p.y += p.vy;
+        p.alpha *= 0.94;
+        if (p.alpha < 0.05) {
+          sparks.splice(i, 1);
+          continue;
+        }
+        ctx.save();
+        ctx.globalAlpha = p.alpha;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+        ctx.restore();
+      }
+
+      requestAnimationFrame(renderDnaFrame);
+    }
+
+    /* --------------------------------------------------------------------------
+       3. HERO PACKAGING PREVIEW SWITCHER & CLIPBOARD SWATCH COPY
+       -------------------------------------------------------------------------- */
+    function setPackagingPreviewMode(mode) {
+      const view3D = document.getElementById('preview3DView');
+      const viewCAD = document.getElementById('previewCADView');
+      const btn3D = document.getElementById('btnMode3D');
+      const btnCAD = document.getElementById('btnModeCAD');
+
+      if (mode === 'cad') {
+        view3D.classList.add('hidden');
+        viewCAD.classList.remove('hidden');
+        btnCAD.className = 'px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider btn-crimson-pulse spec-font';
+        btn3D.className = 'px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-offwhite/80 hover:text-white spec-font';
+      } else {
+        viewCAD.classList.add('hidden');
+        view3D.classList.remove('hidden');
+        btn3D.className = 'px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider btn-crimson-pulse spec-font';
+        btnCAD.className = 'px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-offwhite/80 hover:text-white spec-font';
+      }
+    }
+
+    // Subtle 3D tilt on Hero Packaging Stage
+    const heroCardStage = document.getElementById('heroCardStage');
+    const heroTiltCard = document.getElementById('heroTiltCard');
+    if (heroCardStage && heroTiltCard) {
+      heroCardStage.addEventListener('mousemove', (e) => {
+        const rect = heroCardStage.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        heroTiltCard.style.transform = `rotateX(${(-y / 22).toFixed(2)}deg) rotateY(${(x / 22).toFixed(2)}deg)`;
+      });
+      heroCardStage.addEventListener('mouseleave', () => {
+        heroTiltCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      });
+    }
+
+    function copyHex(hexCode) {
+      const tempInput = document.createElement('textarea');
+      tempInput.value = hexCode;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      triggerToast(`Copied brand swatch ${hexCode}`);
+    }
+
+    /* --------------------------------------------------------------------------
+       4. EDITORIAL SERVICES ACCORDION
+       -------------------------------------------------------------------------- */
+    function toggleServicePanel(index) {
+      for (let i = 0; i < 5; i++) {
+        const body = document.getElementById('srvBody' + i);
+        const icon = document.getElementById('srvIcon' + i);
+        if (i === index) {
+          const willOpen = body.classList.contains('hidden');
+          body.classList.toggle('hidden', !willOpen);
+          icon.textContent = willOpen ? '−' : '+';
+        } else {
+          body.classList.add('hidden');
+          icon.textContent = '+';
+        }
+      }
+    }
+
+    /* --------------------------------------------------------------------------
+       5. COMPLETE RATE CARD & LIVE QUOTE CALCULATOR WITH CRIMSON RUSH LOGIC
+       -------------------------------------------------------------------------- */
+    const rateCardCatalog = {
+      brand: {
+        title: '1. Brand Identity',
+        items: [
+          { id: 'bi_1', work: 'Logo only', price: 3500, display: '₹3,500', includes: '2 concepts, 2 revisions, all file formats', time: '3–5 days', multiQty: false },
+          { id: 'bi_2', work: 'Logo + color and typography', price: 7500, display: '₹7,500', includes: 'Logo, palette, fonts, 1-page style sheet', time: '5–7 days', multiQty: false },
+          { id: 'bi_3', work: 'Full brand identity', price: 15000, display: '₹15,000', includes: 'Logo suite, palette, fonts, stationery, social kit, brand guidelines PDF', time: '10–14 days', multiQty: false }
+        ]
+      },
+      packaging: {
+        title: '2. Packaging & Label Design',
+        items: [
+          { id: 'pk_1', work: 'Product label (1 SKU)', price: 3000, display: '₹3,000', includes: 'Print-ready label, 2 revisions', time: '3–4 days', multiQty: true },
+          { id: 'pk_2', work: 'Box / pouch artwork (1 SKU)', price: 6000, display: '₹6,000', includes: 'Dieline-fitted artwork with red cut line', time: '5–7 days', multiQty: true },
+          { id: 'pk_3', work: 'Extra variant (flavour/size)', price: 1500, display: '₹1,500', includes: 'Same design, new colors/text', time: '1–2 days', multiQty: true },
+          { id: 'pk_4', work: 'Full packaging range (3 SKUs)', price: 14000, display: '₹14,000', includes: 'Box + label for each, consistent system', time: '10–14 days', multiQty: false }
+        ]
+      },
+      social: {
+        title: '3. Social Media & Marketing',
+        items: [
+          { id: 'sm_1', work: 'Single post or story', price: 400, display: '₹400', includes: 'Scroll-stopping platform export', time: '1 day', multiQty: true },
+          { id: 'sm_2', work: 'Carousel (5–7 slides)', price: 1800, display: '₹1,800', includes: 'Multi-slide storytelling layout', time: '2 days', multiQty: true },
+          { id: 'sm_3', work: 'Ad creative (with 2 size variants)', price: 1200, display: '₹1,200', includes: 'Feed + Story high-converting formats', time: '1–2 days', multiQty: true },
+          { id: 'sm_4', work: 'Monthly pack (12 posts + 2 carousels)', price: 8000, display: '₹8,000', includes: 'Consistent brand template system', time: 'Ongoing', multiQty: false },
+          { id: 'sm_5', work: 'Highlight covers / profile setup', price: 1500, display: '₹1,500', includes: 'Cohesive social storefront polish', time: '2 days', multiQty: false }
+        ]
+      },
+      print: {
+        title: '4. Print & Promotional',
+        items: [
+          { id: 'pr_1', work: 'Business card', price: 1200, display: '₹1,200', includes: 'Print-ready with bleed + web version', time: '1–2 days', multiQty: false },
+          { id: 'pr_2', work: 'Flyer / poster', price: 1800, display: '₹1,800', includes: 'Press-ready layout + digital share file', time: '2 days', multiQty: true },
+          { id: 'pr_3', work: 'Menu (single page)', price: 2500, display: '₹2,500', includes: 'Custom typographic hierarchy & print file', time: '2–3 days', multiQty: true },
+          { id: 'pr_4', work: 'Brochure (bi/tri-fold)', price: 4500, display: '₹4,500', includes: 'Fold-calibrated print-ready PDF', time: '4–5 days', multiQty: false },
+          { id: 'pr_5', work: 'Catalogue (per page)', price: 600, display: '₹600 per page', includes: 'Adjust page count in quote calculator', time: 'Depends on pages', multiQty: true },
+          { id: 'pr_6', work: 'Standee / banner', price: 1800, display: '₹1,800', includes: 'Large-format print file', time: '2 days', multiQty: true }
+        ]
+      },
+      mockups: {
+        title: '5. 3D Mockups',
+        items: [
+          { id: 'mk_1', work: 'Single mockup', price: 1000, display: '₹1,000', includes: 'Realistic 3D surface placement', time: '1 day', multiQty: true },
+          { id: 'mk_2', work: 'Mockup set (5 angles/scenes)', price: 4000, display: '₹4,000', includes: 'Multi-angle studio & lifestyle renders', time: '3 days', multiQty: true },
+          { id: 'mk_3', work: 'Custom 3D product render', price: 5000, display: '₹5,000 per product', includes: 'Bespoke 3D model, lighting & render', time: '4–6 days', multiQty: true }
+        ]
+      }
+    };
+
+    let currentCategory = 'brand';
+    let quoteCart = [];
+
+    function formatINR(amount) {
+      return '₹' + amount.toLocaleString('en-IN');
+    }
+
+    let toastTimeout;
+    function triggerToast(message) {
+      const toast = document.getElementById('studioToast');
+      document.getElementById('studioToastText').textContent = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 2600);
+    }
+
+    function switchRateCategory(catKey) {
+      currentCategory = catKey;
+      document.querySelectorAll('.cat-tab').forEach((btn) => {
+        if (btn.dataset.cat === catKey) {
+          btn.className = 'cat-tab px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider btn-primary-shift';
+        } else {
+          btn.className = 'cat-tab px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider surface-card';
+        }
+      });
+      renderRateCardRows();
+    }
+
+    function renderRateCardRows() {
+      const cat = rateCardCatalog[currentCategory];
+      document.getElementById('activeCategoryTitle').textContent = cat.title;
+      const container = document.getElementById('rateCardRows');
+
+      container.innerHTML = cat.items.map((item) => {
+        const inCart = quoteCart.some((q) => q.id === item.id);
+        return `
+          <div class="px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-[var(--bg-subtle)] transition-colors">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <strong class="text-sm font-bold" style="color: var(--text-primary);">${item.work}</strong>
+                <span class="text-[10px] px-2.5 py-0.5 rounded-full surface-card spec-font" style="color: var(--text-muted);">${item.time}</span>
+              </div>
+              <p class="text-xs mt-0.5" style="color: var(--text-muted);">${item.includes}</p>
+            </div>
+            <div class="flex items-center justify-between sm:justify-end gap-4">
+              <span class="brand-font text-xs sm:text-sm font-bold text-electric">${item.display}</span>
+              <button
+                type="button"
+                onclick="toggleRateItem('${item.id}', '${item.work.replace(/'/g, "\\'")}', ${item.price}, false, ${item.multiQty})"
+                class="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all spec-font ${
+                  inCart ? 'btn-crimson-pulse' : 'btn-secondary-glass'
+                }"
+              >
+                ${inCart ? '✓ Added' : '+ Add'}
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleRateItem(id, name, price, includesSource, multiQty) {
+      const idx = quoteCart.findIndex((q) => q.id === id);
+      if (idx > -1) {
+        quoteCart.splice(idx, 1);
+        triggerToast(`Removed ${name}`);
+      } else {
+        quoteCart.push({ id, name, price, qty: 1, includesSource, multiQty });
+        triggerToast(`Added ${name}`);
+      }
+      renderRateCardRows();
+      recalculateQuote();
+    }
+
+    function addBundleToQuote(name, price, includesSource) {
+      const id = 'bundle_' + name.toLowerCase().replace(/[^a-z0-9]/g, '_');
+      if (!quoteCart.some((q) => q.id === id)) {
+        quoteCart.push({ id, name, price, qty: 1, includesSource, multiQty: false });
+        triggerToast(`Added ${name} (${formatINR(price)})`);
+      } else {
+        triggerToast(`${name} is already in your quote`);
+      }
+      recalculateQuote();
+      document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function changeCartQty(id, delta) {
+      const item = quoteCart.find((q) => q.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        quoteCart = quoteCart.filter((q) => q.id !== id);
+      }
+      renderRateCardRows();
+      recalculateQuote();
+    }
+
+    function removeCartItem(id) {
+      quoteCart = quoteCart.filter((q) => q.id !== id);
+      renderRateCardRows();
+      recalculateQuote();
+    }
+
+    function clearQuoteCart() {
+      quoteCart = [];
+      document.getElementById('chkRushDelivery').checked = false;
+      document.getElementById('chkSourceFiles').checked = false;
+      renderRateCardRows();
+      recalculateQuote();
+      triggerToast('Quote cleared');
+    }
+
+    function recalculateQuote() {
+      const listEl = document.getElementById('quoteCartContainer');
+      const rushChecked = document.getElementById('chkRushDelivery').checked;
+      const sourceChecked = document.getElementById('chkSourceFiles').checked;
+
+      if (quoteCart.length === 0) {
+        listEl.innerHTML = `
+          <div class="p-4 rounded-2xl border border-dashed text-center text-xs spec-font" style="border-color: var(--border-subtle); color: var(--text-muted);">
+            Click <strong>+ Add</strong> on any rate card item or select a Bundle above to build your live quote.
+          </div>
+        `;
+      } else {
+        listEl.innerHTML = quoteCart.map((item) => `
+          <div class="px-3.5 py-2.5 rounded-xl border flex items-center justify-between gap-2 text-xs spec-font" style="background: var(--bg-input); border-color: var(--border-subtle);">
+            <div>
+              <strong class="block" style="color: var(--text-primary);">${item.name}</strong>
+              <span style="color: var(--text-muted);">${formatINR(item.price)} ${item.qty > 1 ? '× ' + item.qty : ''}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              ${item.multiQty ? `
+                <div class="flex items-center rounded-lg border overflow-hidden" style="border-color: var(--border-subtle);">
+                  <button type="button" onclick="changeCartQty('${item.id}', -1)" class="px-2 py-0.5 hover:bg-[var(--bg-subtle)]">−</button>
+                  <span class="px-1.5 font-bold text-crimson">${item.qty}</span>
+                  <button type="button" onclick="changeCartQty('${item.id}', 1)" class="px-2 py-0.5 hover:bg-[var(--bg-subtle)]">+</button>
+                </div>
+              ` : ''}
+              <strong class="brand-font text-xs" style="color: var(--accent-primary);">${formatINR(item.price * item.qty)}</strong>
+              <button type="button" onclick="removeCartItem('${item.id}')" class="text-crimson hover:text-red-300 font-bold ml-1">✕</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const subtotal = quoteCart.reduce((acc, item) => acc + item.price * item.qty, 0);
+      const hasFreeSourceBundle = quoteCart.some((item) => item.includesSource);
+
+      const rushFee = rushChecked && subtotal > 0 ? Math.round(subtotal * 0.30) : 0;
+      const sourceFee = sourceChecked && subtotal > 0 && !hasFreeSourceBundle ? 2000 : 0;
+
+      const rowRush = document.getElementById('rowRushFee');
+      const rowSource = document.getElementById('rowSourceFee');
+
+      rowRush.classList.toggle('hidden', !(rushChecked && subtotal > 0));
+      rowRush.classList.toggle('flex', rushChecked && subtotal > 0);
+      document.getElementById('valRushFee').textContent = formatINR(rushFee);
+
+      rowSource.classList.toggle('hidden', !(sourceChecked && subtotal > 0));
+      rowSource.classList.toggle('flex', sourceChecked && subtotal > 0);
+      document.getElementById('valSourceFee').textContent = hasFreeSourceBundle ? 'Included Free' : '₹2,000';
+
+      const grandTotal = subtotal + rushFee + sourceFee;
+      const advance = Math.round(grandTotal * 0.50);
+
+      document.getElementById('valSubtotal').textContent = formatINR(subtotal);
+      document.getElementById('valGrandTotal').textContent = formatINR(grandTotal);
+      document.getElementById('valAdvance').textContent = formatINR(advance);
+      document.getElementById('navQuoteTotal').textContent = formatINR(grandTotal);
+    }
+
+    function compileQuoteSummary() {
+      if (quoteCart.length === 0) return null;
+      const items = quoteCart.map((i) => `${i.name}${i.qty > 1 ? ' (x' + i.qty + ')' : ''}`).join(', ');
+      const total = document.getElementById('valGrandTotal').textContent;
+      const advance = document.getElementById('valAdvance').textContent;
+      const addons = [];
+      if (document.getElementById('chkRushDelivery').checked) addons.push('Rush 24-48h (+30%)');
+      if (document.getElementById('chkSourceFiles').checked) addons.push('Source Files');
+      return `${items}${addons.length ? ' [' + addons.join(', ') + ']' : ''} — Total: ${total} (50% Advance: ${advance})`;
+    }
+
+    function pushQuoteToContactForm() {
+      const summary = compileQuoteSummary();
+      const quoteField = document.getElementById('inputQuoteSummary');
+      const briefField = document.getElementById('inputBrief');
+
+      if (summary) {
+        quoteField.value = summary;
+        briefField.value = `Hi Pixelform Studio,\n\nI built an estimate on your website:\n${summary}\n\nHere are my product details and target timeline:\n`;
+        triggerToast('Quote pushed to project brief form');
+      } else {
+        triggerToast('Add services first or write your custom brief below');
+      }
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function sendQuoteViaWhatsApp() {
+      const summary = compileQuoteSummary();
+      const text = summary
+        ? `Hi Pixelform Studio! ("Your thought, Our design.")\n\nI created a project quote on your website:\n${summary}\n\nLet's discuss next steps.`
+        : `Hi Pixelform Studio! I'd like to discuss a graphic & packaging design project.`;
+      window.open(`https://wa.me/917024980813?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+    }
+
+    // Mobile Menu Drawer
+    const mobileNavBtn = document.getElementById('mobileNavBtn');
+    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    mobileNavBtn.addEventListener('click', () => {
+      mobileNavDrawer.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-link').forEach((link) => {
+      link.addEventListener('click', () => mobileNavDrawer.classList.add('hidden'));
+    });
+
+    // Serverless Formspree AJAX Submission
+    const briefForm = document.getElementById('pixelformBriefForm');
+    const btnSubmitBrief = document.getElementById('btnSubmitBrief');
+    const formStatusBanner = document.getElementById('formStatusBanner');
+
+    briefForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btnSubmitBrief.disabled = true;
+      btnSubmitBrief.textContent = 'Sending Brief...';
+      formStatusBanner.className = 'hidden';
+
+      try {
+        const res = await fetch(briefForm.action, {
+          method: 'POST',
+          body: new FormData(briefForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          formStatusBanner.textContent = '✓ Thank you! Your project brief and estimate have been sent to Pixelform. We will get back to you within 24 hours.';
+          formStatusBanner.className = 'block p-4 rounded-2xl text-xs sm:text-sm font-semibold surface-card';
+          formStatusBanner.style.color = 'var(--accent-primary)';
+          briefForm.reset();
+          triggerToast('Brief sent to Pixelform!');
+        } else {
+          formStatusBanner.textContent = 'Could not submit form right now. Please message us directly on WhatsApp (+91 70249 80813).';
+          formStatusBanner.className = 'block p-4 rounded-2xl text-xs sm:text-sm font-semibold surface-card text-crimson';
+        }
+      } catch (err) {
+        formStatusBanner.textContent = 'Network error. Please email pixelform.co@gmail.com or WhatsApp +91 70249 80813.';
+        formStatusBanner.className = 'block p-4 rounded-2xl text-xs sm:text-sm font-semibold surface-card text-crimson';
+      } finally {
+        btnSubmitBrief.disabled = false;
+        btnSubmitBrief.textContent = 'Submit Project Brief';
+      }
+    });
+
+    // Start all interactive engines on window load
+    window.onload = function () {
+      resizeDnaStage();
+      renderRateCardRows();
+      recalculateQuote();
+      renderDnaFrame();
+    };
+  </script>
+</body>
+</html>
