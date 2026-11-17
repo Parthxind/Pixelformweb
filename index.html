@@ -426,16 +426,16 @@
               <span>01. Six Core Pillars</span>
               <span>→</span>
             </a>
-            <a href="#maintenanceProgram" onclick="closeTopLeftSegmentsMenu()" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-crimson hover:bg-crimson/15 transition-colors">
-              <span>02. Website + Care Calculator</span>
-              <span>→</span>
-            </a>
             <a href="#bundles" onclick="closeTopLeftSegmentsMenu()" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold hover:bg-electric/15 hover:text-electric transition-colors">
-              <span>03. Packages &amp; Monthly Plans</span>
+              <span>02. Packages &amp; Monthly Plans</span>
               <span>→</span>
             </a>
             <a href="#pricing" onclick="closeTopLeftSegmentsMenu()" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold hover:bg-electric/15 hover:text-electric transition-colors">
-              <span>04. Official Pricing &amp; Quote</span>
+              <span>03. Official Pricing &amp; Quote</span>
+              <span>→</span>
+            </a>
+            <a href="#webAddonManagementSegment" onclick="closeTopLeftSegmentsMenu(); switchRateCategory('webaddons');" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-crimson hover:bg-crimson/15 transition-colors">
+              <span>04. Website Management Add-On</span>
               <span>→</span>
             </a>
             <a href="#guidelines" onclick="closeTopLeftSegmentsMenu()" class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-crimson hover:bg-crimson/15 transition-colors">
@@ -504,8 +504,8 @@
             <a href="#pricing" class="px-7 py-4 rounded-full text-xs sm:text-sm uppercase tracking-wider btn-crimson-pulse">
               Official Pricing &amp; Quote Builder
             </a>
-            <a href="#maintenanceProgram" class="px-7 py-4 rounded-full text-xs sm:text-sm uppercase tracking-wider btn-secondary-glass">
-              Website + Care Calculator
+            <a href="#webAddonManagementSegment" onclick="switchRateCategory('webaddons')" class="px-7 py-4 rounded-full text-xs sm:text-sm uppercase tracking-wider btn-secondary-glass">
+              Website Management Add-On
             </a>
           </div>
 
@@ -654,7 +654,7 @@
   </section>
 
   <!-- ==========================================================================
-       01 // SIX CORE SERVICES (EDITORIAL ACCORDION WITH BULLETS) + WEBSITE CARE
+       01 // SIX CORE SERVICES (EDITORIAL ACCORDION WITH BULLETS)
        ========================================================================== -->
   <section id="services" class="relative z-10 py-20 border-t" style="border-color: var(--border-subtle);">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
@@ -776,12 +776,12 @@
                   <strong class="text-[11px] font-bold uppercase tracking-widest block mb-2 text-crimson">Domain, Hosting &amp; Care</strong>
                   <ul class="space-y-1.5 list-disc list-inside leading-relaxed">
                     <li>Domain &amp; hosting billed at cost plus a small management fee.</li>
-                    <li>Optional multi-month/year Maintenance Program (₹400/mo or ₹4,800/yr base).</li>
+                    <li>Optional multi-month/year Management Add-On (₹400/mo or ₹4,800/yr base).</li>
                     <li>Full source handover once payment is 100% complete.</li>
                   </ul>
                 </div>
-                <a href="#pricing" onclick="switchRateCategory('webaddons')" class="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:underline text-crimson">
-                  <span>Explore Website &amp; Add-ons</span>
+                <a href="#webAddonManagementSegment" onclick="switchRateCategory('webaddons')" class="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:underline text-crimson">
+                  <span>Explore Website &amp; Management Add-Ons</span>
                   <span>→</span>
                 </a>
               </div>
@@ -1009,231 +1009,6 @@
                   <span>→</span>
                 </a>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ======================================================================
-           INTERACTIVE WEBSITE MAKING (₹6,000 BASE / ₹4,899 STARTER) + YEARS & MONTHS MAINTENANCE
-           ====================================================================== -->
-      <div id="maintenanceProgram" class="mt-12 surface-card rounded-3xl p-6 sm:p-9 border-crimson/40 relative overflow-hidden">
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 mb-7 border-b" style="border-color: var(--border-subtle);">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-[0.22em] text-crimson block mb-1.5 spec-font">
-              Website Creation (₹6,000 Official Base / ₹4,899 Starter) + Custom Years &amp; Months Care
-            </span>
-            <h3 class="brand-font text-lg sm:text-2xl font-bold">
-              Website Making &amp; Maintenance Program
-            </h3>
-          </div>
-          <div class="inline-flex flex-wrap items-center gap-2 px-4 py-2 rounded-full surface-card text-xs font-bold spec-font" style="color: var(--accent-primary);">
-            <span>3-Page Base: ₹6,000</span>
-            <span>•</span>
-            <span>Starter: ₹4,899</span>
-            <span>•</span>
-            <span>Care: ₹400/mo (₹4,800/yr)</span>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <!-- Left 7 Columns: Website Tier Selector + Years & Months Entry + Payment Plan Selector -->
-          <div class="lg:col-span-7 space-y-5">
-            <!-- Website Build Tier Selection -->
-            <div class="p-4 rounded-2xl border space-y-3" style="background: var(--bg-input); border-color: var(--border-strong);">
-              <span class="text-xs font-bold uppercase tracking-wider block spec-font" style="color: var(--text-muted);">
-                1. Select Website Making Tier (Or Care Only)
-              </span>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 spec-font">
-                <button
-                  type="button"
-                  id="webTierBtn_base6000"
-                  onclick="selectWebBuildTier('base6000')"
-                  class="p-3 rounded-xl text-left border transition-all btn-crimson-pulse"
-                >
-                  <div class="flex items-center justify-between">
-                    <strong class="text-xs uppercase">PDF Base Site</strong>
-                    <span class="text-xs font-extrabold">₹6,000</span>
-                  </div>
-                  <span class="text-[10px] opacity-90 block mt-0.5">Up to 3 pages, WA + form, 5-7d</span>
-                </button>
-
-                <button
-                  type="button"
-                  id="webTierBtn_starter4899"
-                  onclick="selectWebBuildTier('starter4899')"
-                  class="p-3 rounded-xl text-left border transition-all surface-card"
-                >
-                  <div class="flex items-center justify-between">
-                    <strong class="text-xs uppercase" style="color: var(--text-primary);">Starter Launch</strong>
-                    <span class="text-xs font-extrabold text-electric">₹4,899</span>
-                  </div>
-                  <span class="text-[10px] block mt-0.5" style="color: var(--text-muted);">Single-page launch site</span>
-                </button>
-
-                <button
-                  type="button"
-                  id="webTierBtn_none"
-                  onclick="selectWebBuildTier('none')"
-                  class="p-3 rounded-xl text-left border transition-all surface-card"
-                >
-                  <div class="flex items-center justify-between">
-                    <strong class="text-xs uppercase" style="color: var(--text-primary);">Care Only</strong>
-                    <span class="text-xs font-extrabold" style="color: var(--text-muted);">₹0 Build</span>
-                  </div>
-                  <span class="text-[10px] block mt-0.5" style="color: var(--text-muted);">For existing websites</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Years & Months Direct Entry Format -->
-            <div class="p-4 sm:p-5 rounded-2xl border space-y-4" style="background: var(--bg-input); border-color: var(--border-subtle);">
-              <div class="flex flex-wrap items-center justify-between gap-2">
-                <span class="text-xs font-bold uppercase tracking-wider spec-font" style="color: var(--text-muted);">
-                  2. Enter Maintenance Duration (Years &amp; Months)
-                </span>
-                <div class="flex items-center gap-2">
-                  <span id="maintDurationBadge" class="brand-font text-xs sm:text-sm font-bold text-gradient-crimson">2 Years, 6 Months</span>
-                  <span id="maintDiscountPill" class="px-2.5 py-0.5 rounded-full bg-crimson/20 text-crimson text-[10px] font-extrabold spec-font">10% OFF CARE</span>
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 spec-font">
-                <!-- Years Input Box -->
-                <div class="p-3 rounded-xl border flex items-center justify-between gap-3" style="background: var(--bg-surface); border-color: var(--border-strong);">
-                  <div>
-                    <label for="maintYearsInput" class="block text-[10px] font-bold uppercase tracking-widest text-electric">Years (0–10)</label>
-                    <span class="text-[10px]" style="color: var(--text-muted);">₹4,800 / year base</span>
-                  </div>
-                  <div class="flex items-center gap-1.5">
-                    <button type="button" onclick="stepMaintField('years', -1)" class="w-8 h-8 rounded-lg surface-card font-bold text-sm hover:text-crimson">−</button>
-                    <input
-                      type="number"
-                      id="maintYearsInput"
-                      min="0"
-                      max="10"
-                      value="2"
-                      oninput="updateMaintenanceDuration()"
-                      class="w-14 h-9 text-center rounded-lg border font-bold text-base focus:outline-none focus:border-electric"
-                      style="background: var(--bg-input); border-color: var(--border-subtle); color: var(--text-primary);"
-                    />
-                    <button type="button" onclick="stepMaintField('years', 1)" class="w-8 h-8 rounded-lg surface-card font-bold text-sm hover:text-electric">+</button>
-                  </div>
-                </div>
-
-                <!-- Months Input Box -->
-                <div class="p-3 rounded-xl border flex items-center justify-between gap-3" style="background: var(--bg-surface); border-color: var(--border-strong);">
-                  <div>
-                    <label for="maintMonthsInput" class="block text-[10px] font-bold uppercase tracking-widest text-crimson">Months (0–11)</label>
-                    <span class="text-[10px]" style="color: var(--text-muted);">₹400 / month base</span>
-                  </div>
-                  <div class="flex items-center gap-1.5">
-                    <button type="button" onclick="stepMaintField('months', -1)" class="w-8 h-8 rounded-lg surface-card font-bold text-sm hover:text-crimson">−</button>
-                    <input
-                      type="number"
-                      id="maintMonthsInput"
-                      min="0"
-                      max="11"
-                      value="6"
-                      oninput="updateMaintenanceDuration()"
-                      class="w-14 h-9 text-center rounded-lg border font-bold text-base focus:outline-none focus:border-crimson"
-                      style="background: var(--bg-input); border-color: var(--border-subtle); color: var(--text-primary);"
-                    />
-                    <button type="button" onclick="stepMaintField('months', 1)" class="w-8 h-8 rounded-lg surface-card font-bold text-sm hover:text-electric">+</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Quick Duration Presets -->
-              <div class="flex flex-wrap items-center gap-2 pt-1 text-[11px] font-bold spec-font" style="color: var(--text-muted);">
-                <span class="text-[10px] uppercase tracking-wider">Quick Fill:</span>
-                <button type="button" onclick="setMaintenanceDuration(0, 6)" class="px-2.5 py-1 rounded-lg surface-card hover:text-electric">6 Mos</button>
-                <button type="button" onclick="setMaintenanceDuration(1, 0)" class="px-2.5 py-1 rounded-lg surface-card hover:text-electric">1 Yr 0 Mo</button>
-                <button type="button" onclick="setMaintenanceDuration(2, 6)" class="px-2.5 py-1 rounded-lg surface-card hover:text-electric">2 Yrs 6 Mos</button>
-                <button type="button" onclick="setMaintenanceDuration(5, 0)" class="px-2.5 py-1 rounded-lg surface-card hover:text-electric">5 Yrs</button>
-                <button type="button" onclick="setMaintenanceDuration(10, 0)" class="px-2.5 py-1 rounded-lg surface-card hover:text-crimson text-crimson">10 Yrs (Max Save)</button>
-              </div>
-            </div>
-
-            <!-- Payment Plan Selector -->
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider block mb-2.5 spec-font" style="color: var(--text-muted);">
-                3. Choose Payment Plan
-              </span>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 spec-font">
-                <button
-                  type="button"
-                  id="planBtn_split"
-                  onclick="setMaintenancePlan('split')"
-                  class="maint-plan-btn p-3 rounded-2xl text-left border transition-all btn-crimson-pulse"
-                >
-                  <strong class="block text-xs uppercase">50 / 50 Split</strong>
-                  <span class="text-[10px] opacity-90">50% advance + 50% pre-handover</span>
-                </button>
-                <button
-                  type="button"
-                  id="planBtn_annual"
-                  onclick="setMaintenancePlan('annual')"
-                  class="maint-plan-btn p-3 rounded-2xl text-left border transition-all surface-card"
-                >
-                  <strong class="block text-xs uppercase" style="color: var(--text-primary);">Yearly / Periodic</strong>
-                  <span class="text-[10px]" style="color: var(--text-muted);">Build + Yr 1 now, rest periodic</span>
-                </button>
-                <button
-                  type="button"
-                  id="planBtn_upfront"
-                  onclick="setMaintenancePlan('upfront')"
-                  class="maint-plan-btn p-3 rounded-2xl text-left border transition-all surface-card"
-                >
-                  <strong class="block text-xs uppercase text-electric">Full Upfront</strong>
-                  <span class="text-[10px]" style="color: var(--text-muted);">Single complete settlement</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right 5 Columns: Live Overall Cost & Payment Schedule Card -->
-          <div class="lg:col-span-5 rounded-2xl p-6 border flex flex-col justify-between space-y-5" style="background: var(--bg-input); border-color: var(--border-strong);">
-            <div class="space-y-2.5 text-xs sm:text-sm spec-font">
-              <div id="maintMakingLine" class="flex justify-between font-semibold" style="color: var(--text-primary);">
-                <span id="maintMakingLabel">Website Base (Up to 3 Pages)</span>
-                <span id="maintMakingAmount" class="text-crimson">₹6,000</span>
-              </div>
-              <div class="flex justify-between" style="color: var(--text-muted);">
-                <span>Maintenance (<span id="maintTotalMonthsLabel">30 mos</span> × ₹400/mo)</span>
-                <span id="maintGrossCost">₹12,000</span>
-              </div>
-              <div class="flex justify-between text-electric font-semibold">
-                <span>Multi-Year Care Savings</span>
-                <span id="maintSavingsAmount">− ₹1,200</span>
-              </div>
-              <div class="flex justify-between items-baseline pt-3 border-t" style="border-color: var(--border-subtle);">
-                <span class="brand-font text-xs font-bold">Overall Cost</span>
-                <strong id="maintNetTotal" class="brand-font text-xl sm:text-2xl text-gradient-cyan">₹16,800</strong>
-              </div>
-              <div class="p-3 rounded-xl border mt-2" style="background: var(--bg-subtle); border-color: var(--border-subtle);">
-                <span class="text-[10px] font-bold uppercase tracking-wider block text-crimson mb-1">Active Payment Schedule</span>
-                <p id="maintScheduleText" class="text-xs font-semibold leading-relaxed" style="color: var(--text-primary);">
-                  ₹8,400 due today (50% advance) • ₹8,400 before final handover
-                </p>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 spec-font">
-              <button
-                type="button"
-                onclick="addMaintenanceToQuote()"
-                class="py-3 px-4 rounded-full btn-secondary-glass text-xs uppercase tracking-wider"
-              >
-                + Add to Quote
-              </button>
-              <button
-                type="button"
-                onclick="payMaintenanceDirectly()"
-                class="py-3 px-4 rounded-full btn-crimson-pulse text-xs uppercase tracking-wider"
-              >
-                Pay Now via Gateway →
-              </button>
             </div>
           </div>
         </div>
@@ -2412,7 +2187,6 @@
       });
 
       window.addEventListener('pointermove', (e) => {
-        // Update cursor-reactive tilt target whenever the mouse moves
         const normX = (e.clientX / Math.max(window.innerWidth, 1)) - 0.5;
         const normY = (e.clientY / Math.max(window.innerHeight, 1)) - 0.5;
         targetCursorTiltY = normX * 70;
@@ -2461,7 +2235,6 @@
 
     window.addEventListener('resize', resizeDnaStage);
 
-    // Global Cursor Movement Sparkle Generator
     window.addEventListener('mousemove', (e) => {
       const mx = e.clientX;
       const my = e.clientY;
@@ -2523,7 +2296,6 @@
       if (!ctx) return;
       ctx.clearRect(0, 0, viewportW, viewportH);
 
-      // Smoothly interpolate 3D Package Sandbox box with cursor movement + optional auto-spin
       boxCursorTiltX += (targetCursorTiltX - boxCursorTiltX) * 0.14;
       boxCursorTiltY += (targetCursorTiltY - boxCursorTiltY) * 0.14;
       if (boxAutoSpin && !isDraggingBox) {
@@ -2559,7 +2331,6 @@
       ctx.stroke();
       ctx.restore();
 
-      // Scroll Beacon Node traveling along fixed conduit path
       const beaconY = 85 + scrollRatio * Math.max(viewportH - 170, 120);
       const beaconX = getFixedConduitX(beaconY / Math.max(viewportH, 1), scrollRatio);
       if (Number.isFinite(beaconX) && Number.isFinite(beaconY)) {
@@ -2879,7 +2650,7 @@
 
       const webMgmtSegment = document.getElementById('webAddonManagementSegment');
       if (webMgmtSegment) {
-        webMgmtSegment.style.display = (catKey === 'webaddons' || catKey === 'base') ? 'block' : 'block';
+        webMgmtSegment.style.display = 'block';
       }
 
       renderRateCardRows();
@@ -3026,6 +2797,13 @@
       discPercent: 0
     };
 
+    function getMonthlyTenureDiscountRate(totalMonths) {
+      if (totalMonths >= 84) return 0.30;
+      if (totalMonths >= 48) return 0.20;
+      if (totalMonths >= 24) return 0.10;
+      return 0;
+    }
+
     function stepWaMgmtTenure(unit, delta) {
       const yrsEl = document.getElementById('waMgmtYearsInput');
       const mosEl = document.getElementById('waMgmtMonthsInput');
@@ -3129,7 +2907,6 @@
       const discNote = discPercent > 0 ? `, ${discPercent}% Off` : '';
       const addonLabel = `Website Management Add-On (${durationText} / ${totalMonths} mos${discNote})`;
 
-      // Replace any previous Website Management Add-On in quoteCart
       quoteCart = quoteCart.filter((q) => !q.id.startsWith('wa_mgmt_tenure_'));
       quoteCart.push({
         id: `wa_mgmt_tenure_${Date.now()}`,
@@ -3232,14 +3009,9 @@
       const revChecked = document.getElementById('chkExtraRevision').checked;
       const hasFreeSourceBundle = quoteCart.some((item) => item.includesSource);
 
-      // Official PDF Rule (Part B, Section 3): Rush delivery = +25% of the base price
       const rushBasePool = baseSubtotal > 0 ? baseSubtotal : (cartAddonsSubtotal + customSubtotal);
       const rushFee = rushChecked && anyItems ? Math.round(rushBasePool * 0.25) : 0;
-
-      // Official PDF Rule (Part B, Section 3): Source files (AI, PSD, Figma) = ₹500
       const sourceFee = sourceChecked && anyItems && !hasFreeSourceBundle ? 500 : 0;
-
-      // Official PDF Rule (Part B, Section 3): Extra revision round = ₹750 per round
       const revFee = revChecked && anyItems ? 750 : 0;
 
       const totalAddons = cartAddonsSubtotal + rushFee + sourceFee + revFee;
@@ -3306,221 +3078,7 @@
     }
 
     /* --------------------------------------------------------------------------
-       6. WEBSITE MAKING (₹6,000 OFFICIAL BASE / ₹4,899 STARTER) + YEARS & MONTHS CARE
-       -------------------------------------------------------------------------- */
-    let selectedWebBuildTier = 'base6000';
-    let maintSelectedPlan = 'split';
-    let currentMaintCalculation = {
-      tierKey: 'base6000',
-      makingCost: 6000,
-      makingTitle: 'Website Base (₹6,000)',
-      years: 2,
-      months: 6,
-      totalMonths: 30,
-      durationText: '2 Years, 6 Months',
-      overallTotal: 16800,
-      dueToday: 8400,
-      planLabel: '50/50 Split Plan'
-    };
-
-    function selectWebBuildTier(tierKey) {
-      selectedWebBuildTier = tierKey;
-      ['base6000', 'starter4899', 'none'].forEach((k) => {
-        const btn = document.getElementById('webTierBtn_' + k);
-        if (!btn) return;
-        if (k === tierKey) {
-          btn.className = 'p-3 rounded-xl text-left border transition-all btn-crimson-pulse';
-        } else {
-          btn.className = 'p-3 rounded-xl text-left border transition-all surface-card';
-        }
-      });
-      updateMaintenanceDuration();
-    }
-
-    function getMonthlyTenureDiscountRate(totalMonths) {
-      if (totalMonths >= 84) return 0.30;
-      if (totalMonths >= 48) return 0.20;
-      if (totalMonths >= 24) return 0.10;
-      return 0;
-    }
-
-    function stepMaintField(unit, delta) {
-      const yrsInput = document.getElementById('maintYearsInput');
-      const mosInput = document.getElementById('maintMonthsInput');
-      let yrs = parseInt(yrsInput.value, 10) || 0;
-      let mos = parseInt(mosInput.value, 10) || 0;
-
-      if (unit === 'years') {
-        yrs = Math.max(0, Math.min(10, yrs + delta));
-        if (yrs === 10) mos = 0;
-      } else {
-        mos += delta;
-        if (mos > 11) {
-          if (yrs < 10) {
-            yrs += 1;
-            mos = 0;
-          } else {
-            mos = 0;
-          }
-        } else if (mos < 0) {
-          if (yrs > 0) {
-            yrs -= 1;
-            mos = 11;
-          } else {
-            mos = 0;
-          }
-        }
-      }
-
-      if (yrs === 0 && mos === 0) mos = 1;
-      yrsInput.value = yrs;
-      mosInput.value = mos;
-      updateMaintenanceDuration();
-    }
-
-    function setMaintenanceDuration(yrs, mos) {
-      document.getElementById('maintYearsInput').value = yrs;
-      document.getElementById('maintMonthsInput').value = mos;
-      updateMaintenanceDuration();
-    }
-
-    function setMaintenancePlan(planKey) {
-      maintSelectedPlan = planKey;
-      ['split', 'annual', 'upfront'].forEach((key) => {
-        const btn = document.getElementById('planBtn_' + key);
-        if (!btn) return;
-        if (key === planKey) {
-          btn.className = 'maint-plan-btn p-3 rounded-2xl text-left border transition-all btn-crimson-pulse';
-        } else {
-          btn.className = 'maint-plan-btn p-3 rounded-2xl text-left border transition-all surface-card';
-        }
-      });
-      updateMaintenanceDuration();
-    }
-
-    function updateMaintenanceDuration() {
-      const yrsInput = document.getElementById('maintYearsInput');
-      const mosInput = document.getElementById('maintMonthsInput');
-
-      let yrs = Math.max(0, Math.min(10, parseInt(yrsInput ? yrsInput.value : 2, 10) || 0));
-      let mos = Math.max(0, Math.min(11, parseInt(mosInput ? mosInput.value : 6, 10) || 0));
-      if (yrs === 10) mos = 0;
-      if (yrs === 0 && mos === 0) mos = 1;
-
-      if (yrsInput) yrsInput.value = yrs;
-      if (mosInput) mosInput.value = mos;
-
-      const totalMonths = yrs * 12 + mos;
-
-      let makingCost = 0;
-      let makingTitle = 'Care Only';
-      if (selectedWebBuildTier === 'base6000') {
-        makingCost = 6000;
-        makingTitle = 'Website Base (Up to 3 Pages)';
-      } else if (selectedWebBuildTier === 'starter4899') {
-        makingCost = 4899;
-        makingTitle = 'Starter Website Launch (1 Page)';
-      }
-
-      const parts = [];
-      if (yrs > 0) parts.push(`${yrs} ${yrs === 1 ? 'Year' : 'Years'}`);
-      if (mos > 0) parts.push(`${mos} ${mos === 1 ? 'Month' : 'Months'}`);
-      const durationText = parts.join(', ');
-
-      const maintGross = totalMonths * MAINT_MONTHLY_BASE;
-      const tenureDisc = getMonthlyTenureDiscountRate(totalMonths);
-      const maintSavings = Math.round(maintGross * tenureDisc);
-      const maintNet = maintGross - maintSavings;
-      const overallTotal = makingCost + maintNet;
-
-      const makingLine = document.getElementById('maintMakingLine');
-      if (makingLine) {
-        makingLine.classList.toggle('hidden', makingCost === 0);
-        document.getElementById('maintMakingLabel').textContent = makingTitle;
-        document.getElementById('maintMakingAmount').textContent = formatINR(makingCost);
-      }
-
-      document.getElementById('maintDurationBadge').textContent = durationText;
-      document.getElementById('maintTotalMonthsLabel').textContent = `${totalMonths} ${totalMonths === 1 ? 'mo' : 'mos'}`;
-      document.getElementById('maintGrossCost').textContent = formatINR(maintGross);
-      document.getElementById('maintSavingsAmount').textContent = maintSavings > 0 ? `− ${formatINR(maintSavings)}` : '₹0 (Standard)';
-      document.getElementById('maintNetTotal').textContent = formatINR(overallTotal);
-
-      const discPercent = Math.round(tenureDisc * 100);
-      const pill = document.getElementById('maintDiscountPill');
-      pill.textContent = discPercent > 0 ? `${discPercent}% OFF CARE` : 'STANDARD CARE';
-
-      let dueToday = overallTotal;
-      let planLabel = 'Full Upfront Settlement';
-      let scheduleDesc = `${formatINR(overallTotal)} full payment for ${makingCost > 0 ? makingTitle + ' + ' : ''}${durationText} care`;
-
-      if (maintSelectedPlan === 'split') {
-        dueToday = Math.round(overallTotal * 0.5);
-        const balance = overallTotal - dueToday;
-        planLabel = '50/50 Split Plan';
-        scheduleDesc = `${formatINR(dueToday)} due today (50% advance) • ${formatINR(balance)} before final file/site handover`;
-      } else if (maintSelectedPlan === 'annual') {
-        const firstPeriodMonths = Math.min(12, totalMonths);
-        const firstPeriodCare = Math.round((maintNet / totalMonths) * firstPeriodMonths);
-        dueToday = makingCost + firstPeriodCare;
-        planLabel = 'Yearly / Periodic Plan';
-        const remainingCare = maintNet - firstPeriodCare;
-        if (makingCost > 0) {
-          scheduleDesc = remainingCare > 0
-            ? `${formatINR(dueToday)} due today (${formatINR(makingCost)} web + first ${firstPeriodMonths} mos care) • ${formatINR(remainingCare)} over remaining ${totalMonths - firstPeriodMonths} mos`
-            : `${formatINR(dueToday)} due today (${formatINR(makingCost)} web + ${durationText} care)`;
-        } else {
-          scheduleDesc = remainingCare > 0
-            ? `${formatINR(dueToday)} due today (first ${firstPeriodMonths} mos) • ${formatINR(remainingCare)} over remaining ${totalMonths - firstPeriodMonths} mos`
-            : `${formatINR(dueToday)} total for ${durationText} care`;
-        }
-      }
-
-      document.getElementById('maintScheduleText').textContent = scheduleDesc;
-      currentMaintCalculation = {
-        tierKey: selectedWebBuildTier,
-        makingCost,
-        makingTitle,
-        years: yrs,
-        months: mos,
-        totalMonths,
-        durationText,
-        overallTotal,
-        dueToday,
-        planLabel
-      };
-    }
-
-    function addMaintenanceToQuote() {
-      updateMaintenanceDuration();
-      const { makingCost, makingTitle, durationText, overallTotal, planLabel } = currentMaintCalculation;
-      const prefix = makingCost > 0 ? `${makingTitle} + ` : 'Website ';
-      const label = `${prefix}Care (${durationText} • ${planLabel})`;
-      quoteCart = quoteCart.filter((q) => !q.id.startsWith('maint_care_'));
-      quoteCart.push({
-        id: `maint_care_${Date.now()}`,
-        name: label,
-        price: overallTotal,
-        qty: 1,
-        itemType: 'base',
-        includesSource: false,
-        multiQty: false
-      });
-      recalculateQuote();
-      triggerToast(`Added ${label} (${formatINR(overallTotal)})`);
-      document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function payMaintenanceDirectly() {
-      updateMaintenanceDuration();
-      const { makingCost, makingTitle, durationText, overallTotal, dueToday, planLabel } = currentMaintCalculation;
-      const prefix = makingCost > 0 ? `${makingTitle} + ` : 'Website ';
-      const label = `${prefix}Care (${durationText} • ${planLabel})`;
-      openPaymentGateway(label, overallTotal, dueToday);
-    }
-
-    /* --------------------------------------------------------------------------
-       7. SECURE PAYMENT GATEWAY CHECKOUT ENGINE (UPI: 7024980813-2@ybl)
+       6. SECURE PAYMENT GATEWAY CHECKOUT ENGINE (UPI: 7024980813-2@ybl)
        -------------------------------------------------------------------------- */
     const STUDIO_UPI_ID = '7024980813-2@ybl';
 
@@ -3679,7 +3237,7 @@
     }
 
     /* --------------------------------------------------------------------------
-       8. ASYNC FORMSPREE SUBMISSION
+       7. ASYNC FORMSPREE SUBMISSION
        -------------------------------------------------------------------------- */
     const briefForm = document.getElementById('briefForm');
     if (briefForm) {
@@ -3723,7 +3281,6 @@
       resizeDnaStage();
       renderRateCardRows();
       recalculateQuote();
-      updateMaintenanceDuration();
       recalcWaMgmtAddon();
       updateCustomEstPreview();
       renderDnaFrame();
